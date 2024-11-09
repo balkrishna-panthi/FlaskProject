@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>China</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif, sans-serif;
+            margin: 0;
+            padding: 0;
+            font-size: 20px;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+        }
+        .section {
+            margin: 20px 0;
+        }
+        .section h2 {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .slideshow {
+            width: 39dvi;
+            height: 40dvh;
+            margin: auto;
+            display: flex;
+            gap: 18px;
+            overflow: scroll;
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+        }
+
+        .slideshow img {
+        max-width: 100%;
+        display: block;
+        scroll-snap-align: start ;
+        }
+
+        .top-cities {
+            text-align: center;
+        }
+        .top-cities p {
+            text-align: justify;
+            line-height: 1.6;
+        }
+
+        .attractions {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+        .attractions p {
+            text-align: justify;
+            line-height: 1.6;
+        }
+        .attractions img {
+            width: 40%;
+            height: auto;
+            margin-left: 15px;
+        }
+
+        .cuisine {
+            text-align: center;
+        }
+        .cuisine p {
+            text-align: justify;
+            line-height: 1.6;
+        }
+
+        .culture {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+        .culture p {
+            text-align: justify;
+            line-height: 1.6;
+        }
+        .culture img {
+            width: 40%;
+            height: auto;
+            margin-right: 15px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="section slideshow">
+        <img src="{{ url_for('static', filename='ProjectImages/Beijing.jpg') }}" alt="Beijing">
+        <img src="{{ url_for('static', filename='ProjectImages/Shanghai.jpg') }}" alt="Shanghai">
+        <img src="{{ url_for('static', filename='ProjectImages/Hongkong.jfif') }}" alt="Hongkong">
+        <img src="{{ url_for('static', filename='ProjectImages/Xian.jpg') }}" alt="Xian">
+        <img src="{{ url_for('static', filename='ProjectImages/Guangzhou.jpg') }}" alt="Guangzhou">
+        <img src="{{ url_for('static', filename='ProjectImages/Shenzhen.jpg') }}" alt="Shenzhen">
+        <img src="{{ url_for('static', filename='ProjectImages/Chengdu.jpg') }}" alt="Chengdu">
+        <img src="{{ url_for('static', filename='ProjectImages/Chongqing.jpg') }}" alt="Chongqing">
+        <img src="{{ url_for('static', filename='ProjectImages/Guilin.jpg') }}" alt="Guilin">        
+        <img src="{{ url_for('static', filename='ProjectImages/Hangzhou.jpeg') }}" alt="Hangzhou">
+    </div>
+
+    <div class="section top-cities">
+        <h2>Top 10 Cities in China</h2>
+        <p>
+            China is home to a variety of culturally rich and vibrant cities, each blending ancient heritage with modern growth. Beijing, the capital, showcases historic landmarks 
+            like the Forbidden City and the Great Wall, while Shanghai, a global financial hub, dazzles with its skyline. Hong Kong serves as a bridge between East and West, Xi'an is 
+            a living museum of Chinese history, and Guangzhou is known for trade and iconic structures like the Five Rams Statue. Shenzhen exemplifies rapid development and is China's
+            "Silicon Valley." Chengdu is famous for pandas and tea houses, Chongqing offers a mountainous, urban landscape, and Guilin captivates with its scenic karst landscapes. 
+            Lastly, Hangzhou enchants visitors with West Lake, Longjing tea, and cultural sites, reflecting China’s diverse charm and history.
+        </p>
+    </div>
+
+    <div class="section attractions">
+        <div>
+            <h2>Attractions</h2>
+            <p>
+                China offers breathtaking attractions, from the historic Forbidden City in Beijing to the famous Terracotta Warriors in Xi’an. For a unique experience, visit the 
+                Chengdu Research Center to observe and even volunteer with pandas in their natural habitat, especially during the early morning feeding hours when they’re most active.
+            </p>
+        </div>
+        <img src="{{ url_for('static', filename='ProjectImages/ChinaAttraction.jpeg') }}" alt="Attractions in China">
+
+    </div>
+
+    <div class="section cuisine">
+        <h2>Cuisine</h2>
+        <p>
+            Chinese cuisine is celebrated globally for its rich diversity, with each region offering distinct flavors, from Sichuan's spicy dishes to the sweet flavors of Cantonese 
+            cooking. Traditional Chinese meals focus on fresh ingredients and emphasize the sensory qualities of texture, color, and aroma, with minimal dairy and deep-frying, unlike 
+            the Westernized versions popularized abroad. Desserts are usually fresh fruits or light sweets enjoyed occasionally, with Western-style desserts reserved for special 
+            occasions.
+        </p>
+    </div>
+
+    <div class="section culture">
+        <img src="{{ url_for('static', filename='ProjectImages/ChineseCulture.jpeg') }}" alt="Chinese Culture">
+
+        <div>
+            <h2>Culture</h2>
+            <p>
+                CChinese cuisine is renowned for its regional diversity and emphasis on fresh ingredients, showcasing unique flavors like the spiciness of Sichuan and the sweetness 
+                of Cantonese dishes. Traditional meals prioritize texture, color, and aroma, with desserts typically featuring fresh fruits or light sweets.
+            </p>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

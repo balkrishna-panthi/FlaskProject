@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indonesia</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif, sans-serif;
+            margin: 0;
+            padding: 0;
+            font-size: 20px;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+        }
+        .section {
+            margin: 20px 0;
+        }
+        .section h2 {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .slideshow {
+            width: 39dvi;
+            height: 40dvh;
+            margin: auto;
+            display: flex;
+            gap: 18px;
+            overflow: scroll;
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+        }
+
+        .slideshow img {
+            max-width: 100%;
+            display: block;
+            scroll-snap-align: start ;
+        }
+
+        .top-cities {
+            text-align: center;
+        }
+        .top-cities p {
+            text-align: justify;
+            line-height: 1.6;
+        }
+
+        .attractions {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+        .attractions p {
+            text-align: justify;
+            line-height: 1.6;
+        }
+        .attractions img {
+            width: 40%;
+            height: auto;
+            margin-left: 15px;
+        }
+
+        .cuisine {
+            text-align: center;
+        }
+        .cuisine p {
+            text-align: justify;
+            line-height: 1.6;
+        }
+
+        .culture {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+        .culture p {
+            text-align: justify;
+            line-height: 1.6;
+        }
+        .culture img {
+            width: 26%;
+            height: auto;
+            margin-right: 15px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="section slideshow">
+        <img src="{{ url_for('static', filename='ProjectImages/IndoCulture.jpg') }}" alt="culture1"/>
+        <img src="{{ url_for('static', filename='ProjectImages/IndoCulture2.jpg') }}" alt="culture2"/>
+        <img src="{{ url_for('static', filename='ProjectImages/IndoCulture3.jpg') }}" alt="culture3"/> 
+        <img src="{{ url_for('static', filename='ProjectImages/IndoCulture4.jpg') }}" alt="culture4"/> 
+        <img src="{{ url_for('static', filename='ProjectImages/IndoCulture5.jpg') }}" alt="culture5"/> 
+        <img src="{{ url_for('static', filename='ProjectImages/IndoCulture6.jpg') }}" alt="culture6"/> 
+    </div>
+
+    <div class="section top-cities">
+        <h2>Indonesia</h2>
+        <p>Indonesia, officially the Republic of Indonesia, is a diverse Southeast Asian and Oceanian archipelagic nation with over 17,000 islands, including major islands like Java,
+            Sumatra, and parts of Borneo and New Guinea, situated between the Indian and Pacific oceans. It spans 1.9 million square kilometers and is the fourth most populous country 
+            globally with over 280 million people, primarily Muslim, and Java alone houses more than half of the population. Governed as a presidential republic with 38 provinces, 
+            Indonesia's capital, Jakarta, is one of the world’s most populated urban areas. The nation is known for its high biodiversity, cultural diversity, and ethnic variety, with 
+            thousands of ethnic groups and hundreds of languages. Despite challenges like natural disasters, separatist movements, and corruption, Indonesia has shown resilience, 
+            achieving rapid economic growth and democratic progress. As the world’s third-largest democracy and a significant economy, Indonesia plays an active role in global 
+            organizations, including the UN, G20, ASEAN, and the Organisation of Islamic Cooperation.
+        </p>
+        
+    </div>
+
+    <div class="section attractions">
+        <div>
+            <h2>Attractions</h2>
+            <p>
+                Indonesia, celebrated for its breathtaking natural beauty, is a premier global diving destination with sites like Misool Island in Raja Ampat, home to one-third of 
+                the world’s coral and rich marine biodiversity. Other famed spots, including Bunaken Marine Park, Wakatobi, and the Derawan Islands, draw divers from around the world 
+                to explore its underwater wonders.
+            </p>
+        </div>
+        <img src="{{ url_for('static', filename='ProjectImages/IndoAttraction.jpg') }}" alt="Attractions in Indonesia">
+    </div>
+
+    <div class="section cuisine">
+        <h2>Cuisine</h2>
+        <p> 
+            Indonesian cuisine is richly diverse, shaped by its 6,000 populated islands and historical trade with India, the Middle East, China, and Europe. Signature dishes like 
+            nasi goreng, gado-gado, and satay are recognized globally, while Indonesian staples like tofu and tempeh have become popular plant-based foods worldwide.
+        </p>
+
+    </div>
+
+    <div class="section culture">
+        <img src="{{ url_for('static', filename='ProjectImages/IndoCulture7.jpg') }}" alt="Indonesia culture">
+        <div>
+            <h2>Culture</h2>
+            <p>
+                Indonesia's culture is a rich blend of indigenous traditions and influences from over 1,300 ethnic groups, incorporating elements from Hinduism, Buddhism, Islam, 
+                Confucianism, and Christianity. This diversity is evident in practices like Javanese syncretic beliefs, Balinese dance, and regional art, with Western and Indian 
+                influences seen in music genres like dangdut, while many remote areas preserve unique native customs.
+            </p>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

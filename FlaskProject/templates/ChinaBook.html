@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tour Booking</title>
+    <style>
+        .container {
+            display: grid;
+            grid-template-columns: repeat(4, 4fr);
+            gap: 50px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .card {
+            text-align: center;
+            border: 1px solid #ddd;
+            padding: 10px;
+        }
+        .card img {
+            width: 100%;
+            height: auto;
+        }
+        .card .title {
+            font-weight: bold;
+            margin: 10px 0;
+        }
+        .card button {
+            padding: 10px;
+            width: 100%;
+            border: none;
+            background-color: #007BFF;
+            color: white;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .card button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="card">
+        <img src="{{ url_for('static', filename='ProjectImages/Beijing.jpg') }}" alt="Beijing">
+        <button>Beijing</button>
+    </div>
+    <div class="card">
+        <img src="{{ url_for('static', filename='ProjectImages/Shanghai.jpg') }}" alt="Shanghai">
+        <button>Shanghai</button>
+    </div>
+    <div class="card">
+        <img src="{{ url_for('static', filename='ProjectImages/Hongkong.jfif') }}" alt="Hongkong">
+        <button>Hongkong</button>
+    </div>
+    <div class="card">
+        <img src="{{ url_for('static', filename='ProjectImages/Xian.jpg') }}" alt="Xian">
+        <button>Xian</button>
+    </div>
+    <div class="card">
+        <img src="{{ url_for('static', filename='ProjectImages/Guangzhou.jpg') }}" alt="Guangzhou">
+        <button>Guangzhou</button>
+    </div>
+    <div class="card">
+        <img src="{{ url_for('static', filename='ProjectImages/Shenzhen.jpg') }}" alt="Shenzhen">
+        <button>Shenzhen</button>
+    </div>
+    <div class="card">
+        <img src="{{ url_for('static', filename='ProjectImages/Chengdu.jpg') }}" alt="Chengdu">
+        <button>Chengdu</button>
+    </div>
+    <div class="card">
+        <img src="{{ url_for('static', filename='ProjectImages/Chongqing.jpg') }}" alt="Chongqing">
+        <button>Chongqing</button>
+    </div>
+    <div class="card">
+        <img src="{{ url_for('static', filename='ProjectImages/Guilin.jpg') }}" alt="Guilin">
+        <button>Guilin</button>
+    </div>
+    <div class="card">
+        <img src="{{ url_for('static', filename='ProjectImages/ChinaAttraction.jpeg') }}" alt="Attractions in China">
+        <button>China Attractions</button>
+    </div>
+    <div class="card">
+        <img src="{{ url_for('static', filename='ProjectImages/ChineseCulture.jpeg') }}" alt="Chinese Culture">
+        <button>Chinese Culture</button>
+    </div>
+</div>
+
+</body>
+</html>

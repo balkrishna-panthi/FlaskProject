@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Malaysia</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            margin: 0;
+            padding: 0;
+            font-size: 20px;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+        }
+        .section {
+            margin: 20px 0;
+        }
+        .section h2 {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        
+        .culture {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+        .culture img {
+            width: 23%;
+            height: auto;
+            margin-right: 15px;
+        }
+        .culture p {
+            text-align: justify;
+            line-height: 1.6;
+        }
+
+        .explanation {
+            text-align: center;
+            margin: 30px 0;
+        }
+        .explanation p {
+            text-align: justify;
+            line-height: 1.6;
+        }
+
+        .cuisine {
+            text-align: center;
+        }
+        .cuisine p {
+            text-align: justify;
+            line-height: 1.6;
+            margin: 0 auto;
+        }
+
+        .slideshow {
+            width: 39dvi;
+            height: 40dvh;
+            margin: auto;
+            display: flex;
+            gap: 18px;
+            overflow: scroll;
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+        }
+        .slideshow img {
+            max-width: 100%;
+            display: block;
+            scroll-snap-align: start;
+        }
+
+        .attractions {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+        .attractions img {
+            width: 40%;
+            height: auto;
+            margin-left: 15px;
+        }
+        .attractions p {
+            text-align: justify;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="section explanation">
+        <h2>Malaysia</h2>
+        <p>
+            Malaysia is a federal constitutional monarchy located in Southeast Asia, comprising 13 states and three federal territories divided into two regions: Peninsular Malaysia 
+            and East Malaysia. The country shares land borders with Thailand, Brunei, and Indonesia, and maritime borders with Singapore, Vietnam, and the Philippines. Kuala Lumpur 
+            serves as the national capital and largest city, while Putrajaya is the administrative center. With a population exceeding 34 million, Malaysia is the 43rd most populous 
+            nation globally and is known for its tropical climate and rich biodiversity, being one of 17 megadiverse countries. Historically, Malaysia originated from the Malay 
+            kingdoms and became a British protectorate in the 18th century. After World War II and a brief unification as the Malayan Union in 1946, it was restructured into the 
+            Federation of Malaya, gaining independence on August 31, 1957. On September 16, 1963, Malaya united with North Borneo, Sarawak, and Singapore to form Malaysia, although 
+            Singapore was expelled from the federation in August 1965.
+        </p>
+    </div>
+
+    <div class="section culture">
+        <img src="{{ url_for('static', filename='ProjectImages/MalaysianCulture.jpg') }}" alt="Malayculture">
+        <div>
+            <h2>Culture</h2>
+            <p>
+                Malaysia's culture is a rich tapestry woven from the traditions of its diverse ethnic groups, including indigenous tribes, Malays, and immigrants from China and India.
+                Influences from Persian, Arabic, and British cultures further enrich this cultural landscape, resulting in a unique blend of identities that coexist and sometimes 
+                overlap.
+            </p>
+        </div>
+    </div>
+
+    <div class="section attractions">
+        <div>
+            <h2>Attractions</h2>
+            <p>
+                Malaysia is a vibrant Southeast Asian destination that offers a unique blend of Malay culture and natural diversity, attracting tourists of all ages with its notable attractions, 
+                including the Twin Towers, Batu Caves, Astana, and Legoland.   
+            </p>
+        </div>
+    </div>  
+
+    <div class="section slideshow">
+        <img src="{{ url_for('static', filename='ProjectImages/TwinTower.jpg') }}" alt="TwinTower">
+        <img src="{{ url_for('static', filename='ProjectImages/BatucavesMalay.jpg') }}" alt="BatucavesMalay">
+        <img src="{{ url_for('static', filename='ProjectImages/AstanaMalay.jpg') }}" alt="AstanaMalay">
+        <img src="{{ url_for('static', filename='ProjectImages/LegolandMalay.jpg') }}" alt="LegolandMalay">
+        <img src="{{ url_for('static', filename='ProjectImages/NasiLemak.jpg') }}" alt="NasiLemak">
+        <img src="{{ url_for('static', filename='ProjectImages/IceABC.jpg') }}" alt="IceABC">
+    </div>
+
+    <div class="section cuisine">
+        <h2>Cuisine</h2>
+        <p>
+            Malaysia's cuisine is a reflection of its multiethnic population, showcasing a blend of influences from Malay, Chinese, Indian, Thai, Javanese, and Sumatran cuisines due 
+            to its historical position along the spice route. While many dishes retain their cultural origins, they often evolve with local adaptations, leading to unique flavors and 
+            styles, such as the sweeter versions of Chinese dishes and the distinct cuisine of the Peranakans, who combine Chinese techniques with Malay ingredients.
+        </p>
+    </div>
+</div>
+
+</body>
+</html>

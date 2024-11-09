@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Singapore</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif, sans-serif;
+            margin: 0;
+            padding: 0;
+            font-size: 20px;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+        }
+        .section {
+            margin: 20px 0;
+        }
+        .section h2 {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .slideshow {
+            width: 39dvi;
+            height: 40dvh;
+            margin: auto;
+            display: flex;
+            gap: 18px;
+            overflow: scroll;
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+        }
+
+        .slideshow img {
+            max-width: 100%;
+            display: block;
+            scroll-snap-align: start ;
+        }
+
+        .top-cities {
+            text-align: center;
+        }
+        .top-cities p {
+            text-align: justify;
+            line-height: 1.6;
+        }
+
+        .attractions {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+        .attractions p {
+            text-align: justify;
+            line-height: 1.6;
+        }
+        .attractions img {
+            width: 25%;
+            height: auto;
+            margin-left: 15px;
+        }
+
+        .cuisine {
+            text-align: center;
+        }
+        .cuisine p {
+            text-align: justify;
+            line-height: 1.6;
+        }
+
+        .culture {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+        .culture p {
+            text-align: justify;
+            line-height: 1.6;
+        }
+        .culture img {
+            width: 35%;
+            height: auto;
+            margin-right: 15px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="section slideshow">
+        <img src="{{ url_for('static', filename='ProjectImages/Singapore1.jpg') }}" alt="Singapore1">
+        <img src="{{ url_for('static', filename='ProjectImages/Singapore2.jpg') }}" alt="Singapore2">
+        <img src="{{ url_for('static', filename='ProjectImages/Singapore3.jpg') }}" alt="Singapore3">
+        <img src="{{ url_for('static', filename='ProjectImages/Singapore4.jpg') }}" alt="Singapore4">
+        <img src="{{ url_for('static', filename='ProjectImages/Singapore5.jpg') }}" alt="Singapore5">
+        <img src="{{ url_for('static', filename='ProjectImages/Singapore6.jpg') }}" alt="Singapore6">
+    </div>
+
+    <div class="section top-cities">
+        <h2>Singapore</h2>
+        <p>
+            Singapore, officially the Republic of Singapore, is an island city-state in maritime Southeast Asia, consisting of one main island and 63 additional islands and islets. 
+            Located about one degree north of the equator, it is bordered by the Strait of Malacca to the west, the Singapore Strait to the south, the South China Sea to the east, 
+            and the Straits of Johor and the State of Johor in Malaysia to the north.
+        </p>
+    </div>
+
+    <div class="section attractions">
+        <div>
+            <h2>Attractions</h2>
+            <p>
+                Singapore, known as one of the most expensive cities globally, boasts numerous accolades such as being the cleanest and best planned, along with being exceptionally 
+                entertaining. The Lion City features attractions like the largest rooftop infinity pool, the world's first nocturnal safari park, centuries-old temples, stunning 
+                gardens, impressive architecture, and a vibrant food scene, creating a captivating blend of history and modernity.
+            </p>
+        </div>
+        <img src="{{ url_for('static', filename='ProjectImages/SingaporeAttraction.jpg') }}" alt="Attractions in Singapore">
+    </div>
+
+    <div class="section cuisine">
+        <h2>Cuisine</h2>
+        <p>
+            Singapore, despite its small size, is a gastronomic powerhouse, showcasing a vibrant dining scene influenced by its rich cultural diversity stemming from 19th and 
+            20th-century immigration. This culinary tapestry is prominently displayed at hawker centres, where a variety of affordable dishes reflect the unique traditions of Chinese,
+            Malay, and Indian cuisines.
+            <br> <br> 
+        </p>
+    </div>
+
+    <div class="section culture">
+        <img src="{{ url_for('static', filename='ProjectImages/SingaporeCulture.jpg') }}" alt="Singapore Culture">
+        <div>
+            <h2>Culture</h2>
+            <p>
+                Singapore is a gastronomic powerhouse with a vibrant dining scene shaped by its rich cultural diversity from 19th and 20th-century immigration, prominently showcased 
+                in affordable dishes at hawker centres that reflect Chinese, Malay, and Indian culinary traditions.
+            </p>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

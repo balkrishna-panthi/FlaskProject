@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Layout</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body, html {
+            height: 100%;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: url('{{ url_for('static', filename='ProjectImages/Background2.jpg') }}') no-repeat center center fixed;
+            background-size: cover;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: 125px auto 125px;
+            grid-template-rows: 165px 165px 166px;
+            gap: 40px;
+            width: 80%;
+            max-width: 1200px;
+        }
+
+        .container button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            width: 125px;
+            height: 165px;
+        }
+
+        .container button img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Grid positioning similar to the XAML layout */
+        .monas { grid-column: 1; grid-row: 1; }
+        .twin-tower { grid-column: 2; grid-row: 1; }
+        .great-wall { grid-column: 3; grid-row: 1; }
+
+        .taj-mahal { grid-column: 1; grid-row: 2; }
+        .kathmandu { grid-column: 2; grid-row: 2; }
+        .philippines { grid-column: 3; grid-row: 2; }
+
+        .singapore1 { grid-column: 1 / span 2; grid-row: 3; justify-self: center; }
+        .srilanka { grid-column: 2 / span 2; grid-row: 3; justify-self: center; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <button class="monas"><img src="{{ url_for('static', filename='ProjectImages/Monas.jpg') }}" alt="Monas"></button>
+        <button class="twin-tower"><img src="{{ url_for('static', filename='ProjectImages/TwinTower.jpg') }}" alt="Twin Towers"></button>
+        <button class="great-wall"><img src="{{ url_for('static', filename='ProjectImages/GreatWall.jpg') }}" alt="Great Wall"></button>
+        <button class="taj-mahal"><img src="{{ url_for('static', filename='ProjectImages/TajMahal.jpg') }}" alt="Taj Mahal"></button>
+        <button class="kathmandu"><img src="{{ url_for('static', filename='ProjectImages/Kathmandu.jpg') }}" alt="Kathmandu"></button>
+        <button class="philippines"><img src="{{ url_for('static', filename='ProjectImages/Philippines.jpg') }}" alt="Philippines"></button>
+        <button class="singapore1"><img src="{{ url_for('static', filename='ProjectImages/Singapore.jpg') }}" alt="Singapore"></button>
+        <button class="srilanka"><img src="{{ url_for('static', filename='ProjectImages/Singapore.jpg') }}" alt="Srilanka"></button>
+    </div>
+</body>
+</html>

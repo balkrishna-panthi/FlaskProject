@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Philippines</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            margin: 0;
+            padding: 0;
+            font-size: 20px;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+        }
+        .section {
+            margin: 20px 0;
+        }
+        .section h2 {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .culture {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+        .culture picture {
+            width: 26%;
+            height: auto;
+            margin-right: 15px;
+        }
+        .culture p {
+            text-align: justify;
+            line-height: 1.6;
+        }
+
+        .explanation {
+            text-align: center;
+            margin: 30px 0;
+        }
+        .explanation p {
+            text-align: justify;
+            line-height: 1.6;
+        }
+
+        .cuisine {
+            text-align: center;
+        }
+        .cuisine p {
+            text-align: justify;
+            line-height: 1.6;
+            margin: 0 auto;
+        }
+
+        .slideshow {
+            width: 100%;
+            height: 40vh;
+            margin: auto;
+            display: flex;
+            gap: 18px;
+            overflow: scroll;
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+        }
+        .slideshow picture {
+            max-width: 100%;
+            display: block;
+            scroll-snap-align: start;
+        }
+
+        .attractions {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+        .attractions picture {
+            width: 40%;
+            height: auto;
+            margin-left: 15px;
+        }
+        .attractions p {
+            text-align: justify;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="section explanation">
+        <h2>Philippines</h2>
+        <p>
+            The Philippines, an archipelagic nation in Southeast Asia, consists of 7,641 islands and covers approximately 300,000 square kilometers, divided into three main regions: 
+            Luzon, Visayas, and Mindanao. It is the twelfth-most-populous country globally, with a diverse cultural landscape, and its capital is Manila, while Quezon City is the 
+            largest city. Classified as an emerging market, the Philippines is transitioning from an agricultural economy to one centered on services and manufacturing, while also 
+            facing natural disaster risks due to its location on the Pacific Ring of Fire.
+        </p>
+    </div>
+
+    <div class="section culture">
+        <picture>
+            <source srcset="{{ url_for('static', filename='ProjectImages/PhilippinesCulture.jpg') }}" media="(min-width: 768px)">
+            <img src="{{ url_for('static', filename='ProjectImages/PhilippinesCulture.jpg') }}" alt="Traditional Filipino dance at the Ati-Atihan Festival">
+        </picture>
+        <div>
+            <h2>Culture</h2>
+            <p>
+                The Philippines is home to various religious festivals, including the Ati-Atihan Festival, known for its vibrant tribal dances and Catholic rituals, celebrated for an 
+                entire week. The Sinulog Festival, centered around the Santo Niño celebrations, features lively street parties and a distinctive dance characterized by a 
+                two-steps-forward, one-step-back rhythm, and has been celebrated since 1980.               
+            </p>
+        </div>
+    </div>
+
+    <div class="section attractions">
+        <div>
+            <h2>Attractions</h2>
+            <p>
+                Manila, the bustling capital of the Philippines known as the "Pearl of the Orient," offers a rich array of attractions, including museums, parks, theaters, 
+                shopping malls, and diverse culinary experiences, especially in its vibrant street food markets. With thousands of islands, the Philippines boasts emerging beach 
+                destinations like Calauit Island, where eco-tourists can swim with dugongs and learn about conservation efforts to protect these unique marine animals.
+            </p>
+        </div>
+    </div>  
+
+    <div class="section slideshow">
+        <picture>
+            <source srcset="{{ url_for('static', filename='ProjectImages/PhilippinesAttraction.jpg') }}" media="(min-width: 768px)">
+            <img src="{{ url_for('static', filename='ProjectImages/PhilippinesAttraction.jpg') }}" alt="Philippines attraction 1">
+        </picture>
+        <picture>
+            <source srcset="{{ url_for('static', filename='ProjectImages/PhilippinesAttraction1.jpg') }}" media="(min-width: 768px)">
+            <img src="{{ url_for('static', filename='ProjectImages/PhilippinesAttraction1.jpg') }}" alt="Philippines attraction 2">
+        </picture>
+        <picture>
+            <source srcset="{{ url_for('static', filename='ProjectImages/PhilippinesCuisine.jpg') }}" media="(min-width: 768px)">
+            <img src="{{ url_for('static', filename='ProjectImages/PhilippinesCuisine.jpg') }}" alt="Philippines cuisine 1">
+        </picture>
+        <picture>
+            <source srcset="{{ url_for('static', filename='ProjectImages/PhilippinesCuisine2.jpg') }}" media="(min-width: 768px)">
+            <img src="{{ url_for('static', filename='ProjectImages/PhilippinesCuisine2.jpg') }}" alt="Philippines cuisine 2">
+        </picture>
+        <picture>
+            <source srcset="{{ url_for('static', filename='ProjectImages/PhilippinesCuisine3.jpg') }}" media="(min-width: 768px)">
+            <img src="{{ url_for('static', filename='ProjectImages/PhilippinesCuisine3.jpg') }}" alt="Philippines cuisine 3">
+        </picture>
+        <picture>
+            <source srcset="{{ url_for('static', filename='ProjectImages/PhilippinesCuisine4.jpg') }}" media="(min-width: 768px)">
+            <img src="{{ url_for('static', filename='ProjectImages/PhilippinesCuisine4.jpg') }}" alt="Philippines cuisine 4">
+        </picture>
+        <picture>
+            <source srcset="{{ url_for('static', filename='ProjectImages/PhilippinesCuisine1.jpeg') }}" media="(min-width: 768px)">
+            <img src="{{ url_for('static', filename='ProjectImages/PhilippinesCuisine1.jpeg') }}" alt="Philippines cuisine 5">
+        </picture>
+    </div>
+
+    <div class="section cuisine">
+        <h2>Cuisine</h2>
+        <p>
+            For Filipinos, family traditions and celebrations are essential, often marked by gatherings on specific days for festivals, birthdays, and reunions, with a strong emphasis 
+            on sharing food. Iconic dishes like Lechon, a whole roasted pig known for its crispy skin and juicy meat, and Adobo, a savory meat dish marinated in soy sauce and vinegar, 
+            are among the favorites. Other popular Filipino dishes include afritada, sinigang, and kare-kare, alongside snacks and desserts like chicharon, halo-halo, and bibingka. 
+            Some delicacies may be less appealing to Western tastes, such as balut and dinuguan. The culinary landscape is complemented by local beverages like beer and Tanduay Rhum, 
+            making food an integral part of Filipino culture and social life.
+        </p>
+    </div>
+</div>
+
+</body>
+</html>
