@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tourist Attractions in Sri Lanka</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Ensure all cards have uniform height and size */
+        .card {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-body {
+            flex-grow: 1;
+        }
+
+        .card-img-top {
+            object-fit: cover; /* Ensure images cover the space without distortion */
+            height: 200px; /* Set a uniform height for all images */
+        }
+
+        .card-footer {
+            text-align: center;
+            padding: 1rem;
+        }
+
+        .book-btn {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        {% include 'header.html' %}
+    </div>
+
+    <!-- Card Layout -->
+    <div class="container my-5">
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            <!-- Sigiriya Rock Fortress -->
+            <div class="col">
+                <div class="card h-100">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/48/Sigiriya_%28Lion%27s_Rock%29_in_Sri_Lanka.jpg" class="card-img-top" alt="Sigiriya Rock Fortress">
+                    <div class="card-body">
+                        <a href="#" class="card-title text-decoration-none text-dark">Sigiriya Rock Fortress</a>
+                        <p class="card-text">An ancient rock fortress and one of the most iconic landmarks in Sri Lanka, featuring stunning frescoes and panoramic views.</p>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-primary book-btn">Book</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Temple of the Tooth -->
+            <div class="col">
+                <div class="card h-100">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/45/Temple_of_the_Tooth.jpg" class="card-img-top" alt="Temple of the Tooth">
+                    <div class="card-body">
+                        <a href="#" class="card-title text-decoration-none text-dark">Temple of the Tooth</a>
+                        <p class="card-text">A sacred Buddhist temple in Kandy, home to a relic of the Buddha's tooth, attracting pilgrims and visitors from all over the world.</p>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-primary book-btn">Book</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Yala National Park -->
+            <div class="col">
+                <div class="card h-100">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/c9/Yala_National_Park_Sri_Lanka.jpg" class="card-img-top" alt="Yala National Park">
+                    <div class="card-body">
+                        <a href="#" class="card-title text-decoration-none text-dark">Yala National Park</a>
+                        <p class="card-text">Famous for its wildlife and leopards, Yala is Sri Lanka’s most visited national park, with diverse ecosystems and a rich variety of animals.</p>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-primary book-btn">Book</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ella Rock -->
+            <div class="col">
+                <div class="card h-100">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/7/7d/Ella_rock.jpg" class="card-img-top" alt="Ella Rock">
+                    <div class="card-body">
+                        <a href="#" class="card-title text-decoration-none text-dark">Ella Rock</a>
+                        <p class="card-text">A beautiful trekking destination offering breathtaking views of the surrounding valleys, tea plantations, and mountains.</p>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-primary book-btn">Book</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Galle Fort -->
+            <div class="col">
+                <div class="card h-100">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/7/73/Galle_Fort_%28Sri_Lanka%29.jpg" class="card-img-top" alt="Galle Fort">
+                    <div class="card-body">
+                        <a href="#" class="card-title text-decoration-none text-dark">Galle Fort</a>
+                        <p class="card-text">A UNESCO World Heritage site with a rich history, Galle Fort offers stunning views of the ocean and charming streets lined with colonial architecture.</p>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-primary book-btn">Book</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Nuwara Eliya -->
+            <div class="col">
+                <div class="card h-100">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Nuwara_Eliya_Sri_Lanka.jpg" class="card-img-top" alt="Nuwara Eliya">
+                    <div class="card-body">
+                        <a href="#" class="card-title text-decoration-none text-dark">Nuwara Eliya</a>
+                        <p class="card-text">Known as 'Little England,' Nuwara Eliya is a hill station with cool weather, tea plantations, and charming British colonial-era buildings.</p>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-primary book-btn">Book</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Anuradhapura -->
+            <div class="col">
+                <div class="card h-100">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/7/7f/Anuradhapura_Sri_Lanka.jpg" class="card-img-top" alt="Anuradhapura">
+                    <div class="card-body">
+                        <a href="#" class="card-title text-decoration-none text-dark">Anuradhapura</a>
+                        <p class="card-text">A UNESCO World Heritage city, Anuradhapura is home to ancient ruins, stupas, and temples that reflect Sri Lanka’s rich Buddhist history.</p>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-primary book-btn">Book</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mirissa Beach -->
+            <div class="col">
+                <div class="card h-100">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/58/Mirissa_Beach_Sri_Lanka.jpg" class="card-img-top" alt="Mirissa Beach">
+                    <div class="card-body">
+                        <a href="#" class="card-title text-decoration-none text-dark">Mirissa Beach</a>
+                        <p class="card-text">A stunning beach destination known for its golden sands, crystal-clear waters, and the chance to see whales and dolphins.</p>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-primary book-btn">Book</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pinnawala Elephant Orphanage -->
+            <div class="col">
+                <div class="card h-100">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/3/32/Pinnawala_Elephant_Orphanage_Sri_Lanka.jpg" class="card-img-top" alt="Pinnawala Elephant Orphanage">
+                    <div class="card-body">
+                        <a href="#" class="card-title text-decoration-none text-dark">Pinnawala Elephant Orphanage</a>
+                        <p class="card-text">A unique experience to interact with and observe rescued elephants, one of the largest herds in captivity in the world.</p>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-primary book-btn">Book</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Udawalawe National Park -->
+            <div class="col">
+                <div class="card h-100">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/e/ee/Udawalawe_national_park.jpg" class="card-img-top" alt="Udawalawe National Park">
+                    <div class="card-body">
+                        <a href="#" class="card-title text-decoration-none text-dark">Udawalawe National Park</a>
+                        <p class="card-text">A wildlife haven where you can spot elephants, leopards, and various other species in a natural, untouched environment.</p>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-primary book-btn">Book</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        {% include 'footer.html' %}
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

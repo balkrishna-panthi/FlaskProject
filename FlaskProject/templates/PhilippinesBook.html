@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tourist Attractions in the Philippines</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Ensure all cards have uniform height and size */
+        .card {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-body {
+            flex-grow: 1;
+        }
+
+        .card-img-top {
+            object-fit: cover; /* Ensure images cover the space without distortion */
+            height: 200px; /* Set a uniform height for all images */
+        }
+
+        .card-footer {
+            text-align: center;
+            padding: 1rem;
+        }
+
+        .book-btn {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        {% include 'header.html' %}
+    </div>
+
+    <!-- Card Layout -->
+    <div class="container my-5">
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            <!-- Banaue Rice Terraces -->
+            <div class="col">
+                <div class="card h-100">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/9/96/Banaue_Rice_Terraces.jpg" class="card-img-top" alt="Banaue Rice Terraces">
+                    <div class="card-body">
+                        <a href="#" class="card-title text-decoration-none text-dark">Banaue Rice Terraces</a>
+                        <p class="card-text">One of the most stunning archaeological landmarks in the Philippines, known for its 2,000-year-old terraces carved into the mountains.</p>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-primary book-btn">Book</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Chocolate Hills -->
+            <div class="col">
+                <div class="card h-100">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/69/Chocolate_Hills.jpg" class="card-img-top" alt="Chocolate Hills">
+                    <div class="card-body">
+                        <a href="#" class="card-title text-decoration-none text-dark">Chocolate Hills</a>
+                        <p class="card-text">A geological formation in Bohol with over 1,000 mounds that turn brown in the dry season, resembling chocolate.</p>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-primary book-btn">Book</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Puerto Princesa Underground River -->
+            <div class="col">
+                <div class="card h-100">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/1/1a/Puerto_Princesa_Underground_River.jpg" class="card-img-top" alt="Puerto Princesa Underground River">
+                    <div class="card-body">
+                        <a href="#" class="card-title text-decoration-none text-dark">Puerto Princesa Underground River</a>
+                        <p class="card-text">A UNESCO World Heritage Site, this river flows through a cave system and is one of the longest underground rivers in the world.</p>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-primary book-btn">Book</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Taal Volcano -->
+            <div class="col">
+                <div class="card h-100">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/cb/Taal_Volcano_2015.jpg" class="card-img-top" alt="Taal Volcano">
+                    <div class="card-body">
+                        <a href="#" class="card-title text-decoration-none text-dark">Taal Volcano</a>
+                        <p class="card-text">An active volcano located on an island in the middle of Taal Lake, offering breathtaking views and a picturesque landscape.</p>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-primary book-btn">Book</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mayon Volcano -->
+            <div class="col">
+                <div class="card h-100">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a3/Mayon_Volcano.jpg" class="card-img-top" alt="Mayon Volcano">
+                    <div class="card-body">
+                        <a href="#" class="card-title text-decoration-none text-dark">Mayon Volcano</a>
+                        <p class="card-text">Famous for its near-perfect symmetrical cone shape, Mayon is one of the most active volcanoes in the Philippines.</p>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-primary book-btn">Book</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Rizal Park -->
+            <div class="col">
+                <div class="card h-100">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/42/Rizal_Park%2C_Manila.jpg" class="card-img-top" alt="Rizal Park">
+                    <div class="card-body">
+                        <a href="#" class="card-title text-decoration-none text-dark">Rizal Park</a>
+                        <p class="card-text">A historical park in Manila, dedicated to the Philippine national hero, Dr. Jose Rizal, offering a glimpse of the country’s colonial past.</p>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-primary book-btn">Book</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Intramuros -->
+            <div class="col">
+                <div class="card h-100">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/f/f2/Intramuros_Manila.jpg" class="card-img-top" alt="Intramuros">
+                    <div class="card-body">
+                        <a href="#" class="card-title text-decoration-none text-dark">Intramuros</a>
+                        <p class="card-text">The historic center of Manila, filled with Spanish-era architecture, including Fort Santiago and Manila Cathedral.</p>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-primary book-btn">Book</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Boracay Island -->
+            <div class="col">
+                <div class="card h-100">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/c2/Boracay_White_Sand_Beach.jpg" class="card-img-top" alt="Boracay Island">
+                    <div class="card-body">
+                        <a href="#" class="card-title text-decoration-none text-dark">Boracay Island</a>
+                        <p class="card-text">Known for its powdery white sand beaches and crystal-clear waters, Boracay is a top beach destination in the Philippines.</p>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-primary book-btn">Book</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Siargao Island -->
+            <div class="col">
+                <div class="card h-100">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/e/ed/Siargao_Surfing.jpg" class="card-img-top" alt="Siargao Island">
+                    <div class="card-body">
+                        <a href="#" class="card-title text-decoration-none text-dark">Siargao Island</a>
+                        <p class="card-text">A famous surfing destination known for its crystal-clear waters, stunning lagoons, and white sandy beaches.</p>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-primary book-btn">Book</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Enchanted River -->
+            <div class="col">
+                <div class="card h-100">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/7/75/Enchanted_River_Surigao_del_Sur.jpg" class="card-img-top" alt="Enchanted River">
+                    <div class="card-body">
+                        <a href="#" class="card-title text-decoration-none text-dark">Enchanted River</a>
+                        <p class="card-text">A deep spring river in Surigao del Sur, known for its stunning blue color and mystical allure.</p>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-primary book-btn">Book</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        {% include 'footer.html' %}
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

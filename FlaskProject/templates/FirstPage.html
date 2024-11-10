@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -69,4 +69,170 @@
         <button class="srilanka"><img src="{{ url_for('static', filename='ProjectImages/Singapore.jpg') }}" alt="Srilanka"></button>
     </div>
 </body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Layout</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Ensure all cards have uniform height and size */
+        .card {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-body {
+            flex-grow: 1;
+        }
+
+        .card-img-top {
+            object-fit: cover; /* Ensure images cover the space without distortion */
+            height: 200px; /* Set a uniform height for all images */
+        }
+
+        .card-footer {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        {% include 'header.html' %}
+    </div>
+
+    <!-- Card Layout -->
+    <div class="container my-5">
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            <!-- Monas -->
+            <div class="col">
+                <div class="card h-100">
+                    <img src="{{ url_for('static', filename='ProjectImages/Monas.jpg') }}" class="card-img-top" alt="Monas">
+                    <div class="card-body">
+                        <a href="{{ url_for('indonesia') }}" class="card-title text-decoration-none text-dark font-weight-bold">Indonesia</a>
+                        <p class="card-text">This is Monas, a famous landmark in Indonesia.</p>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">Last updated 3 mins ago</small>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Twin Towers -->
+            <div class="col">
+                <div class="card h-100">
+                    <img src="{{ url_for('static', filename='ProjectImages/TwinTower.jpg') }}" class="card-img-top" alt="Twin Towers">
+                    <div class="card-body">
+                        <a href="{{ url_for('malaysia') }}" class="card-title text-decoration-none text-dark font-weight-bold">Malaysia</a>
+                        <p class="card-text">The iconic Twin Towers in Kuala Lumpur, Malaysia.</p>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">Last updated 3 mins ago</small>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Great Wall -->
+            <div class="col">
+                <div class="card h-100">
+                    <img src="{{ url_for('static', filename='ProjectImages/GreatWall.jpg') }}" class="card-img-top" alt="Great Wall">
+                    <div class="card-body">
+                        <a href="{{ url_for('china') }}" class="card-title text-decoration-none text-dark font-weight-bold">China</a>
+                        <p class="card-text">One of the greatest wonders, the Great Wall of China.</p>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">Last updated 3 mins ago</small>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Taj Mahal -->
+            <div class="col">
+                <div class="card h-100">
+                    <img src="{{ url_for('static', filename='ProjectImages/TajMahal.jpg') }}" class="card-img-top" alt="Taj Mahal">
+                    <div class="card-body">
+                        <a href="{{ url_for('india') }}" class="card-title text-decoration-none text-dark font-weight-bold">India</a>
+                        <p class="card-text">The Taj Mahal in India, known for its stunning beauty.</p>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">Last updated 3 mins ago</small>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Kathmandu -->
+            <div class="col">
+                <div class="card h-100">
+                    <img src="{{ url_for('static', filename='ProjectImages/Kathmandu.jpg') }}" class="card-img-top" alt="Kathmandu">
+                    <div class="card-body">
+                        <a href="{{ url_for('nepal') }}" class="card-title text-decoration-none text-dark font-weight-bold">Nepal</a>
+                        <p class="card-text">The capital city of Nepal, rich in history and culture.</p>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">Last updated 3 mins ago</small>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Philippines -->
+            <div class="col">
+                <div class="card h-100">
+                    <img src="{{ url_for('static', filename='ProjectImages/Philippines.jpg') }}" class="card-img-top" alt="Philippines">
+                    <div class="card-body">
+                        <a href="{{ url_for('philippines') }}" class="card-title text-decoration-none text-dark font-weight-bold">Philippines</a>
+                        <p class="card-text">A tropical paradise with beautiful beaches and islands.</p>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">Last updated 3 mins ago</small>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Singapore -->
+            <div class="col">
+                <div class="card h-100">
+                    <img src="{{ url_for('static', filename='ProjectImages/Singapore.jpg') }}" class="card-img-top" alt="Singapore">
+                    <div class="card-body">
+                        <a href="{{ url_for('singapore') }}" class="card-title text-decoration-none text-dark font-weight-bold">Singapore</a>
+                        <p class="card-text">A global financial hub known for its modern architecture.</p>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">Last updated 3 mins ago</small>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sri Lanka -->
+            <div class="col">
+                <div class="card h-100">
+                    <img src="{{ url_for('static', filename='ProjectImages/SriLanka.jpg') }}" class="card-img-top" alt="Sri Lanka">
+                    <div class="card-body">
+                        <a href="{{ url_for('srilanka') }}" class="card-title text-decoration-none text-dark font-weight-bold">Sri Lanka</a>
+                        <p class="card-text">A beautiful island nation known for its beaches and tea plantations.</p>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">Last updated 3 mins ago</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-4 mt-5">
+        <p>&copy; 2024 Your Company. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
 </html>
+

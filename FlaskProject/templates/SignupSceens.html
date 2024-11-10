@@ -24,9 +24,10 @@
         }
 
         .form-box {
+            margin-top: 60px;
             background-color: white;
             width: 732px;
-            height: 810px;
+            height: 840px;
             border-radius: 30px;
             opacity: 0.8;
             padding: 40px;
@@ -109,11 +110,12 @@
                 <input type="password" id="password" name="password">
 
                 <button type="submit" class="signup-btn">Sign Up</button>
+                Have an account?
+                <button class="login-btn" onclick="window.location.href='{{ url_for('login') }}'">Log In</button>
             </form>
 
             <div class="login-text">
-                Has an account?
-                <button class="login-btn" onclick="window.location.href='{{ url_for('login') }}'">Log In</button>
+                
             </div>
         </div>
     </div>

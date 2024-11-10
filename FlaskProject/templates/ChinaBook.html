@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -88,5 +88,216 @@
     </div>
 </div>
 
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tourist Attractions in China</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Ensure all cards have uniform height and size */
+        .card {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-body {
+            flex-grow: 1;
+        }
+
+        .card-img-top {
+            object-fit: cover; /* Ensure images cover the space without distortion */
+            height: 200px; /* Set a uniform height for all images */
+        }
+
+        .card-footer {
+            text-align: center;
+            padding: 1rem;
+        }
+
+        .book-btn {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        {% include 'header.html' %}
+    </div>
+
+    <!-- Card Layout -->
+    <div class="container my-5">
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            <!-- Great Wall of China -->
+            <div class="col">
+                <div class="card h-100">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/e/e0/Great_Wall_of_China_July_2007.jpg" class="card-img-top" alt="Great Wall of China">
+                    <div class="card-body">
+                        <a href="#" class="card-title text-decoration-none text-dark">Great Wall of China</a>
+                        <p class="card-text">A historical marvel stretching over 13,000 miles, one of the most iconic landmarks in China.</p>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-primary book-btn">Book</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Forbidden City -->
+            <div class="col">
+                <div class="card h-100">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6c/Forbidden_City_in_Beijing_%28China%29.jpg" class="card-img-top" alt="Forbidden City">
+                    <div class="card-body">
+                        <a href="#" class="card-title text-decoration-none text-dark">Forbidden City</a>
+                        <p class="card-text">A UNESCO World Heritage Site and former imperial palace located in Beijing.</p>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-primary book-btn">Book</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Terracotta Army -->
+            <div class="col">
+                <div class="card h-100">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Terracotta_Army_-_March_2009.jpg" class="card-img-top" alt="Terracotta Army">
+                    <div class="card-body">
+                        <a href="#" class="card-title text-decoration-none text-dark">Terracotta Army</a>
+                        <p class="card-text">Thousands of life-sized sculptures depicting the army of Qin Shi Huang, the first Emperor of China.</p>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-primary book-btn">Book</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Li River -->
+            <div class="col">
+                <div class="card h-100">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/c9/Li_River_-_China.jpg" class="card-img-top" alt="Li River">
+                    <div class="card-body">
+                        <a href="#" class="card-title text-decoration-none text-dark">Li River</a>
+                        <p class="card-text">Known for its stunning limestone karst peaks and a popular destination for river cruises in southern China.</p>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-primary book-btn">Book</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mount Huangshan -->
+            <div class="col">
+                <div class="card h-100">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/7/7b/Huangshan_Mountain.jpg" class="card-img-top" alt="Mount Huangshan">
+                    <div class="card-body">
+                        <a href="#" class="card-title text-decoration-none text-dark">Mount Huangshan</a>
+                        <p class="card-text">Famous for its uniquely shaped granite peaks, pine trees, and sea of clouds.</p>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-primary book-btn">Book</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Summer Palace -->
+            <div class="col">
+                <div class="card h-100">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/58/Summer_Palace_Lake.jpg" class="card-img-top" alt="Summer Palace">
+                    <div class="card-body">
+                        <a href="#" class="card-title text-decoration-none text-dark">Summer Palace</a>
+                        <p class="card-text">A vast imperial garden and palace complex located in Beijing, a UNESCO World Heritage Site.</p>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-primary book-btn">Book</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Zhangjiajie National Forest Park -->
+            <div class="col">
+                <div class="card h-100">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/2/28/Zhangjiajie_National_Forest_Park_%28China%29.jpg" class="card-img-top" alt="Zhangjiajie National Forest Park">
+                    <div class="card-body">
+                        <a href="#" class="card-title text-decoration-none text-dark">Zhangjiajie National Forest Park</a>
+                        <p class="card-text">Famous for its towering sandstone pillars, which inspired the floating mountains in the movie "Avatar."</p>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-primary book-btn">Book</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Potala Palace -->
+            <div class="col">
+                <div class="card h-100">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/Potala_Palace_-_Lhasa.jpg" class="card-img-top" alt="Potala Palace">
+                    <div class="card-body">
+                        <a href="#" class="card-title text-decoration-none text-dark">Potala Palace</a>
+                        <p class="card-text">A former residence of the Dalai Lama and a sacred pilgrimage site in Lhasa, Tibet.</p>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-primary book-btn">Book</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- West Lake -->
+            <div class="col">
+                <div class="card h-100">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/47/West_Lake_Su_Dongpo.jpg" class="card-img-top" alt="West Lake">
+                    <div class="card-body">
+                        <a href="#" class="card-title text-decoration-none text-dark">West Lake</a>
+                        <p class="card-text">A scenic freshwater lake in Hangzhou, famous for its picturesque landscapes and cultural significance.</p>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-primary book-btn">Book</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Jiuzhaigou Valley -->
+            <div class="col">
+                <div class="card h-100">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Jiuzhaigou_Valley.jpg" class="card-img-top" alt="Jiuzhaigou Valley">
+                    <div class="card-body">
+                        <a href="#" class="card-title text-decoration-none text-dark">Jiuzhaigou Valley</a>
+                        <p class="card-text">A UNESCO World Heritage Site known for its crystal-clear lakes, waterfalls, and snow-capped mountains.</p>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-primary book-btn">Book</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Yellow Mountain (Huangshan) -->
+            <div class="col">
+                <div class="card h-100">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/9/9f/Yellow_Mountain_-_China.jpg" class="card-img-top" alt="Yellow Mountain">
+                    <div class="card-body">
+                        <a href="#" class="card-title text-decoration-none text-dark">Yellow Mountain</a>
+                        <p class="card-text">Known for its steep granite peaks, ancient pine trees, and misty views, it is a UNESCO World Heritage Site.</p>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-primary book-btn">Book</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        {% include 'footer.html' %}
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tourist Attractions in Singapore</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Ensure all cards have uniform height and size */
+        .card {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-body {
+            flex-grow: 1;
+        }
+
+        .card-img-top {
+            object-fit: cover; /* Ensure images cover the space without distortion */
+            height: 200px; /* Set a uniform height for all images */
+        }
+
+        .card-footer {
+            text-align: center;
+            padding: 1rem;
+        }
+
+        .book-btn {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        {% include 'header.html' %}
+    </div>
+
+    <!-- Card Layout -->
+    <div class="container my-5">
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            <!-- Marina Bay Sands -->
+            <div class="col">
+                <div class="card h-100">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a6/Marina_Bay_Sands_Singapore_2013.jpg" class="card-img-top" alt="Marina Bay Sands">
+                    <div class="card-body">
+                        <a href="#" class="card-title text-decoration-none text-dark">Marina Bay Sands</a>
+                        <p class="card-text">An iconic integrated resort with a stunning infinity pool and a spectacular view of the Singapore skyline.</p>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-primary book-btn">Book</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Gardens by the Bay -->
+            <div class="col">
+                <div class="card h-100">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/ae/Gardens_by_the_Bay_Singapore_%28DSC_0093%29.jpg" class="card-img-top" alt="Gardens by the Bay">
+                    <div class="card-body">
+                        <a href="#" class="card-title text-decoration-none text-dark">Gardens by the Bay</a>
+                        <p class="card-text">A futuristic park with distinctive Supertree structures and the iconic Flower Dome and Cloud Forest conservatories.</p>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-primary book-btn">Book</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sentosa Island -->
+            <div class="col">
+                <div class="card h-100">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/Sentosa_Island_Singapore.jpg" class="card-img-top" alt="Sentosa Island">
+                    <div class="card-body">
+                        <a href="#" class="card-title text-decoration-none text-dark">Sentosa Island</a>
+                        <p class="card-text">A popular island resort with attractions like Universal Studios Singapore, S.E.A. Aquarium, and beautiful beaches.</p>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-primary book-btn">Book</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Singapore Zoo -->
+            <div class="col">
+                <div class="card h-100">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/0/09/Singapore_Zoo_2.jpg" class="card-img-top" alt="Singapore Zoo">
+                    <div class="card-body">
+                        <a href="#" class="card-title text-decoration-none text-dark">Singapore Zoo</a>
+                        <p class="card-text">A world-renowned zoo known for its open-concept design and diverse wildlife from around the world.</p>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-primary book-btn">Book</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Merlion Park -->
+            <div class="col">
+                <div class="card h-100">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/2/23/Merlion_Park%2C_Singapore.jpg" class="card-img-top" alt="Merlion Park">
+                    <div class="card-body">
+                        <a href="#" class="card-title text-decoration-none text-dark">Merlion Park</a>
+                        <p class="card-text">A famous symbol of Singapore, featuring a lion's head and fish's body, overlooking Marina Bay.</p>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-primary book-btn">Book</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Chinatown -->
+            <div class="col">
+                <div class="card h-100">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/4f/Chinatown_Singapore.jpg" class="card-img-top" alt="Chinatown">
+                    <div class="card-body">
+                        <a href="#" class="card-title text-decoration-none text-dark">Chinatown</a>
+                        <p class="card-text">A vibrant cultural district full of shops, markets, and temples that reflect Singapore’s Chinese heritage.</p>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-primary book-btn">Book</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Clarke Quay -->
+            <div class="col">
+                <div class="card h-100">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/e/e9/Clarke_Quay_Singapore.jpg" class="card-img-top" alt="Clarke Quay">
+                    <div class="card-body">
+                        <a href="#" class="card-title text-decoration-none text-dark">Clarke Quay</a>
+                        <p class="card-text">A riverside quay with colorful shophouses, restaurants, and entertainment options, perfect for a night out.</p>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-primary book-btn">Book</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Orchard Road -->
+            <div class="col">
+                <div class="card h-100">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Orchard_Road_Singapore.JPG" class="card-img-top" alt="Orchard Road">
+                    <div class="card-body">
+                        <a href="#" class="card-title text-decoration-none text-dark">Orchard Road</a>
+                        <p class="card-text">Singapore's famous shopping street lined with luxury retail outlets, malls, and restaurants.</p>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-primary book-btn">Book</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Universal Studios Singapore -->
+            <div class="col">
+                <div class="card h-100">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/7/7b/Universal_Studios_Singapore_entrance.jpg" class="card-img-top" alt="Universal Studios Singapore">
+                    <div class="card-body">
+                        <a href="#" class="card-title text-decoration-none text-dark">Universal Studios Singapore</a>
+                        <p class="card-text">A theme park with thrilling rides, shows, and attractions based on popular movies and TV shows.</p>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-primary book-btn">Book</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Little India -->
+            <div class="col">
+                <div class="card h-100">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Little_India_Singapore.jpg" class="card-img-top" alt="Little India">
+                    <div class="card-body">
+                        <a href="#" class="card-title text-decoration-none text-dark">Little India</a>
+                        <p class="card-text">A vibrant ethnic district known for its Indian culture, temples, and colorful shops and restaurants.</p>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-primary book-btn">Book</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        {% include 'footer.html' %}
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

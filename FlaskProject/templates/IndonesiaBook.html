@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tourist Attractions in Indonesia</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Ensure all cards have uniform height and size */
+        .card {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-body {
+            flex-grow: 1;
+        }
+
+        .card-img-top {
+            object-fit: cover; /* Ensure images cover the space without distortion */
+            height: 200px; /* Set a uniform height for all images */
+        }
+
+        .card-footer {
+            text-align: center;
+            padding: 1rem;
+        }
+
+        .book-btn {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        {% include 'header.html' %}
+    </div>
+
+    <!-- Card Layout -->
+    <div class="container my-5">
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            <!-- Borobudur Temple -->
+            <div class="col">
+                <div class="card h-100">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/e/e6/Borobudur_Temple.jpg" class="card-img-top" alt="Borobudur Temple">
+                    <div class="card-body">
+                        <a href="#" class="card-title text-decoration-none text-dark">Borobudur Temple</a>
+                        <p class="card-text">A UNESCO World Heritage Site, the largest Buddhist temple in the world, located in Java.</p>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-primary book-btn">Book</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bali -->
+            <div class="col">
+                <div class="card h-100">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/1/1f/Bali_Tanah_Lot.jpg" class="card-img-top" alt="Bali">
+                    <div class="card-body">
+                        <a href="#" class="card-title text-decoration-none text-dark">Bali</a>
+                        <p class="card-text">An island destination famous for its beaches, temples, and vibrant culture.</p>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-primary book-btn">Book</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Komodo Island -->
+            <div class="col">
+                <div class="card h-100">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Komodo_Island_National_Park_Indonesia.jpg" class="card-img-top" alt="Komodo Island">
+                    <div class="card-body">
+                        <a href="#" class="card-title text-decoration-none text-dark">Komodo Island</a>
+                        <p class="card-text">Famous for the Komodo dragons, a UNESCO World Heritage Site, and incredible diving spots.</p>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-primary book-btn">Book</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mount Bromo -->
+            <div class="col">
+                <div class="card h-100">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/7/75/Mount_Bromo.jpg" class="card-img-top" alt="Mount Bromo">
+                    <div class="card-body">
+                        <a href="#" class="card-title text-decoration-none text-dark">Mount Bromo</a>
+                        <p class="card-text">An active volcano in East Java, known for its stunning sunrise views and surrounding landscapes.</p>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-primary book-btn">Book</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ubud -->
+            <div class="col">
+                <div class="card h-100">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/56/Ubud_Bali.jpg" class="card-img-top" alt="Ubud">
+                    <div class="card-body">
+                        <a href="#" class="card-title text-decoration-none text-dark">Ubud</a>
+                        <p class="card-text">Known for its terraced rice paddies, yoga retreats, and arts scene in the heart of Bali.</p>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-primary book-btn">Book</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Raja Ampat -->
+            <div class="col">
+                <div class="card h-100">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/f/f2/Raja_Ampat.jpg" class="card-img-top" alt="Raja Ampat">
+                    <div class="card-body">
+                        <a href="#" class="card-title text-decoration-none text-dark">Raja Ampat</a>
+                        <p class="card-text">An archipelago known for its pristine beaches, crystal-clear waters, and world-class diving.</p>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-primary book-btn">Book</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tana Toraja -->
+            <div class="col">
+                <div class="card h-100">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/f/f9/Tana_Toraja.jpg" class="card-img-top" alt="Tana Toraja">
+                    <div class="card-body">
+                        <a href="#" class="card-title text-decoration-none text-dark">Tana Toraja</a>
+                        <p class="card-text">Famous for its traditional funeral rites, unique architecture, and scenic mountain landscapes.</p>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-primary book-btn">Book</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Gili Islands -->
+            <div class="col">
+                <div class="card h-100">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/59/Gili_Islands_Bali.jpg" class="card-img-top" alt="Gili Islands">
+                    <div class="card-body">
+                        <a href="#" class="card-title text-decoration-none text-dark">Gili Islands</a>
+                        <p class="card-text">Three small islands in Lombok, known for their white sandy beaches, crystal-clear waters, and coral reefs.</p>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-primary book-btn">Book</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Lake Toba -->
+            <div class="col">
+                <div class="card h-100">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/1/1d/Lake_Toba.jpg" class="card-img-top" alt="Lake Toba">
+                    <div class="card-body">
+                        <a href="#" class="card-title text-decoration-none text-dark">Lake Toba</a>
+                        <p class="card-text">The largest volcanic lake in the world, located in North Sumatra, Indonesia.</p>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-primary book-btn">Book</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Baliem Valley -->
+            <div class="col">
+                <div class="card h-100">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/45/Baliem_Valley.jpg" class="card-img-top" alt="Baliem Valley">
+                    <div class="card-body">
+                        <a href="#" class="card-title text-decoration-none text-dark">Baliem Valley</a>
+                        <p class="card-text">Located in Papua, known for its indigenous tribes, stunning landscapes, and traditional culture.</p>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-primary book-btn">Book</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        {% include 'footer.html' %}
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

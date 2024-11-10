@@ -7,7 +7,86 @@ app = Flask(__name__)
 @app.route('/')
 #@app.route('/SignupSceens', methods=['POST'])
 def home():   
-    return render_template('SignupSceens.html')
+    return render_template('Login.html')
+
+
+@app.route('/China')
+def china():
+    return render_template('China.html')
+
+@app.route('/India')
+def india():
+    return render_template('India.html')
+
+@app.route('/Nepal')
+def nepal():
+    return render_template('Nepal.html')
+
+@app.route('/FirstPage')
+def firstpage():
+    return render_template('FirstPage.html')
+
+@app.route('/Indonesia')
+def indonesia():
+    return render_template('Indonesia.html')
+
+@app.route('/Malaysia')
+def malaysia():
+    return render_template('Malaysia.html')
+
+@app.route('/Philippines')
+def philippines():
+    return render_template('Philippines.html')
+
+
+@app.route('/Singapore')
+def singapore():
+    return render_template('Singapore.html')
+
+@app.route('/SriLanka')
+def srilanka():
+    return render_template('SriLanka.html')
+
+
+
+
+@app.route('/ChinaBook')
+def chinabook():
+    return render_template('ChinaBook.html')
+
+@app.route('/IndonesiaBook')
+def indonesiabook():
+    return render_template('IndonesiaBook.html')
+
+@app.route('/NepalBook')
+def nepalbook():
+    return render_template('NepalBook.html')
+
+@app.route('/MalaysiaBook')
+def malaysiabook():
+    return render_template('MalaysiaBook.html')
+
+@app.route('/PhilipipnesBook')
+def philippinesbook():
+    return render_template('PhilippinesBook.html')
+
+@app.route('/SingaporeBook')
+def singaporebook():
+    return render_template('SingaporeBook.html')
+
+@app.route('/SriLankaBook')
+def srilankabook():
+    return render_template('SriLankaBook.html')
+
+@app.route('/IndiaBook')
+def indiabook():
+    return render_template('IndiaBook.html')
+
+
+
+
+
+
 
 @app.route('/signup', methods=['GET', 'POST'])
 def signup():    
@@ -24,21 +103,8 @@ def signup():
 
     return render_template('SignupSceens.html')
 
-@app.route('/China')
-def china():
-    return render_template('China.html')
 
-@app.route('/ChinaBook')
-def chinabook():
-    return render_template('ChinaBook.html')
 
-@app.route('/FirstPage')
-def firstpage():
-    return render_template('FirstPage.html')
-
-@app.route('/Indo')
-def indo():
-    return render_template('Indo.html')
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
@@ -59,21 +125,6 @@ def login():
             return render_template('Login.html', error_message=error_message)  # Show error on the login page
     return render_template('Login.html')
 
-@app.route('/Malaysia')
-def malasiya():
-    return render_template('Malaysia.html')
-
-@app.route('/Philipines')
-def philipines():
-    return render_template('Philipines.html')
-
-# @app.route('/SignupSceens')
-# def signupsceens():
-#     return render_template('SignupSceens.html')
-
-@app.route('/Singapore')
-def singapore():
-    return render_template('Singapore.html')
 
 @app.route('/setcookie')
 def set_cookie():

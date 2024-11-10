@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tourist Attractions in India</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Ensure all cards have uniform height and size */
+        .card {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-body {
+            flex-grow: 1;
+        }
+
+        .card-img-top {
+            object-fit: cover; /* Ensure images cover the space without distortion */
+            height: 200px; /* Set a uniform height for all images */
+        }
+
+        .card-footer {
+            text-align: center;
+            padding: 1rem;
+        }
+
+        .book-btn {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        {% include 'header.html' %}
+    </div>
+
+    <!-- Card Layout -->
+    <div class="container my-5">
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            <!-- Taj Mahal -->
+            <div class="col">
+                <div class="card h-100">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/4c/Taj_Mahal%2C_Agra%2C_India.jpg" class="card-img-top" alt="Taj Mahal">
+                    <div class="card-body">
+                        <a href="#" class="card-title text-decoration-none text-dark">Taj Mahal</a>
+                        <p class="card-text">A world-famous monument and symbol of love, the Taj Mahal is a white marble mausoleum built by Mughal emperor Shah Jahan.</p>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-primary book-btn">Book</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Qutub Minar -->
+            <div class="col">
+                <div class="card h-100">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/7/77/Qutub_Minar_2.jpg" class="card-img-top" alt="Qutub Minar">
+                    <div class="card-body">
+                        <a href="#" class="card-title text-decoration-none text-dark">Qutub Minar</a>
+                        <p class="card-text">A UNESCO World Heritage site, the Qutub Minar is the tallest brick minaret in the world and a masterpiece of Indo-Islamic Afghan architecture.</p>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-primary book-btn">Book</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Red Fort -->
+            <div class="col">
+                <div class="card h-100">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Red_Fort_%28India%29.jpg" class="card-img-top" alt="Red Fort">
+                    <div class="card-body">
+                        <a href="#" class="card-title text-decoration-none text-dark">Red Fort</a>
+                        <p class="card-text">An iconic symbol of India's history, the Red Fort in Delhi was the main residence of the Mughal emperors for around 200 years.</p>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-primary book-btn">Book</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Jaipur City Palace -->
+            <div class="col">
+                <div class="card h-100">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/c7/Jaipur_City_Palace_%28City_Palace%29.jpg" class="card-img-top" alt="Jaipur City Palace">
+                    <div class="card-body">
+                        <a href="#" class="card-title text-decoration-none text-dark">Jaipur City Palace</a>
+                        <p class="card-text">A royal palace complex in Jaipur, the City Palace is known for its stunning architecture, intricate carvings, and vibrant courtyards.</p>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-primary book-btn">Book</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Gateway of India -->
+            <div class="col">
+                <div class="card h-100">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/1/18/Gateway_of_India.jpg" class="card-img-top" alt="Gateway of India">
+                    <div class="card-body">
+                        <a href="#" class="card-title text-decoration-none text-dark">Gateway of India</a>
+                        <p class="card-text">A monumental archway built during the British Raj in Mumbai, the Gateway of India symbolizes the triumph of India’s independence.</p>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-primary book-btn">Book</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Kerala Backwaters -->
+            <div class="col">
+                <div class="card h-100">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Kerala_Backwaters.jpg" class="card-img-top" alt="Kerala Backwaters">
+                    <div class="card-body">
+                        <a href="#" class="card-title text-decoration-none text-dark">Kerala Backwaters</a>
+                        <p class="card-text">A network of tranquil lagoons and rivers, Kerala’s backwaters offer a serene escape, best experienced through houseboat cruises.</p>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-primary book-btn">Book</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Meenakshi Temple -->
+            <div class="col">
+                <div class="card h-100">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/0/09/Meenakshi_Temple_Madurai.jpg" class="card-img-top" alt="Meenakshi Temple">
+                    <div class="card-body">
+                        <a href="#" class="card-title text-decoration-none text-dark">Meenakshi Temple</a>
+                        <p class="card-text">Located in Madurai, Meenakshi Temple is an ancient Hindu temple dedicated to Goddess Meenakshi and Lord Sundareswarar.</p>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-primary book-btn">Book</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ajanta and Ellora Caves -->
+            <div class="col">
+                <div class="card h-100">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/d/d7/Ajanta_caves_1.jpg" class="card-img-top" alt="Ajanta and Ellora Caves">
+                    <div class="card-body">
+                        <a href="#" class="card-title text-decoration-none text-dark">Ajanta and Ellora Caves</a>
+                        <p class="card-text">Ancient rock-cut caves featuring intricate sculptures and paintings, these caves are UNESCO World Heritage sites, representing Indian culture and heritage.</p>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-primary book-btn">Book</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- The Himalayas -->
+            <div class="col">
+                <div class="card h-100">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/42/Himalayas_snow_capped.jpg" class="card-img-top" alt="The Himalayas">
+                    <div class="card-body">
+                        <a href="#" class="card-title text-decoration-none text-dark">The Himalayas</a>
+                        <p class="card-text">The Himalayas offer breathtaking views and are a paradise for trekkers and nature lovers, with some of the highest peaks in the world.</p>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-primary book-btn">Book</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Khajuraho Temples -->
+            <div class="col">
+                <div class="card h-100">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/9/9e/Khajuraho_Temples_India.jpg" class="card-img-top" alt="Khajuraho Temples">
+                    <div class="card-body">
+                        <a href="#" class="card-title text-decoration-none text-dark">Khajuraho Temples</a>
+                        <p class="card-text">Famous for their stunning sculptures and intricate carvings, the Khajuraho Temples are a UNESCO World Heritage site showcasing India's rich art and culture.</p>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-primary book-btn">Book</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        {% include 'footer.html' %}
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

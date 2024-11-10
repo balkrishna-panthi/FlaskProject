@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tourist Attractions in Malaysia</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Ensure all cards have uniform height and size */
+        .card {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-body {
+            flex-grow: 1;
+        }
+
+        .card-img-top {
+            object-fit: cover; /* Ensure images cover the space without distortion */
+            height: 200px; /* Set a uniform height for all images */
+        }
+
+        .card-footer {
+            text-align: center;
+            padding: 1rem;
+        }
+
+        .book-btn {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        {% include 'header.html' %}
+    </div>
+
+    <!-- Card Layout -->
+    <div class="container my-5">
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            <!-- Petronas Twin Towers -->
+            <div class="col">
+                <div class="card h-100">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Petronas_Twin_Towers.jpg" class="card-img-top" alt="Petronas Twin Towers">
+                    <div class="card-body">
+                        <a href="#" class="card-title text-decoration-none text-dark">Petronas Twin Towers</a>
+                        <p class="card-text">The iconic twin towers in Kuala Lumpur, offering stunning views of the city skyline.</p>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-primary book-btn">Book</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Batu Caves -->
+            <div class="col">
+                <div class="card h-100">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/c6/Batu_Caves_Kuala_Lumpur.jpg" class="card-img-top" alt="Batu Caves">
+                    <div class="card-body">
+                        <a href="#" class="card-title text-decoration-none text-dark">Batu Caves</a>
+                        <p class="card-text">A limestone hill with a series of caves, home to a Hindu temple and a giant statue of Lord Murugan.</p>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-primary book-btn">Book</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Langkawi Sky Bridge -->
+            <div class="col">
+                <div class="card h-100">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/7/7b/Langkawi_Sky_Bridge_2017.jpg" class="card-img-top" alt="Langkawi Sky Bridge">
+                    <div class="card-body">
+                        <a href="#" class="card-title text-decoration-none text-dark">Langkawi Sky Bridge</a>
+                        <p class="card-text">A curved cable car bridge offering breathtaking views of the Langkawi islands and rainforest.</p>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-primary book-btn">Book</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- George Town, Penang -->
+            <div class="col">
+                <div class="card h-100">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/George_Town_Penang.jpg" class="card-img-top" alt="George Town, Penang">
+                    <div class="card-body">
+                        <a href="#" class="card-title text-decoration-none text-dark">George Town, Penang</a>
+                        <p class="card-text">A UNESCO World Heritage Site known for its preserved colonial architecture and vibrant street art.</p>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-primary book-btn">Book</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Taman Negara National Park -->
+            <div class="col">
+                <div class="card h-100">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/5d/Taman_Negara.jpg" class="card-img-top" alt="Taman Negara National Park">
+                    <div class="card-body">
+                        <a href="#" class="card-title text-decoration-none text-dark">Taman Negara National Park</a>
+                        <p class="card-text">One of the world’s oldest rainforests, known for its diverse wildlife and eco-tourism experiences.</p>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-primary book-btn">Book</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mount Kinabalu -->
+            <div class="col">
+                <div class="card h-100">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/ab/Mount_Kinabalu_from_5_Borneo.jpg" class="card-img-top" alt="Mount Kinabalu">
+                    <div class="card-body">
+                        <a href="#" class="card-title text-decoration-none text-dark">Mount Kinabalu</a>
+                        <p class="card-text">The highest mountain in Malaysia, offering challenging hikes and stunning views from the summit.</p>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-primary book-btn">Book</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sipadan Island -->
+            <div class="col">
+                <div class="card h-100">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/e/e5/Sipadan_Island.jpg" class="card-img-top" alt="Sipadan Island">
+                    <div class="card-body">
+                        <a href="#" class="card-title text-decoration-none text-dark">Sipadan Island</a>
+                        <p class="card-text">A renowned diving destination, famous for its rich marine life and crystal-clear waters.</p>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-primary book-btn">Book</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Perhentian Islands -->
+            <div class="col">
+                <div class="card h-100">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a3/Perhentian_Islands.jpg" class="card-img-top" alt="Perhentian Islands">
+                    <div class="card-body">
+                        <a href="#" class="card-title text-decoration-none text-dark">Perhentian Islands</a>
+                        <p class="card-text">A tropical paradise with white sandy beaches, clear waters, and great snorkeling opportunities.</p>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-primary book-btn">Book</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Royal Selangor Pewter Factory -->
+            <div class="col">
+                <div class="card h-100">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/3/36/Royal_Selangor_Pewter_Factory.jpg" class="card-img-top" alt="Royal Selangor Pewter Factory">
+                    <div class="card-body">
+                        <a href="#" class="card-title text-decoration-none text-dark">Royal Selangor Pewter Factory</a>
+                        <p class="card-text">A famous pewter factory in Malaysia, offering tours and insights into the craft of pewter production.</p>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-primary book-btn">Book</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Malacca (Melaka) -->
+            <div class="col">
+                <div class="card h-100">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/e/ea/Melaka_Historic_Center.jpg" class="card-img-top" alt="Malacca (Melaka)">
+                    <div class="card-body">
+                        <a href="#" class="card-title text-decoration-none text-dark">Malacca (Melaka)</a>
+                        <p class="card-text">A historic city with a blend of Portuguese, Dutch, and British colonial influences, also a UNESCO World Heritage Site.</p>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-primary book-btn">Book</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        {% include 'footer.html' %}
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

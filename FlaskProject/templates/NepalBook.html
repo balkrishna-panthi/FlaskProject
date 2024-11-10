@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tourist Attractions in Nepal</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Ensure all cards have uniform height and size */
+        .card {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-body {
+            flex-grow: 1;
+        }
+
+        .card-img-top {
+            object-fit: cover; /* Ensure images cover the space without distortion */
+            height: 200px; /* Set a uniform height for all images */
+        }
+
+        .card-footer {
+            text-align: center;
+            padding: 1rem;
+        }
+
+        .book-btn {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        {% include 'header.html' %}
+    </div>
+
+    <!-- Card Layout -->
+    <div class="container my-5">
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            <!-- Swayambhunath (Monkey Temple) -->
+            <div class="col">
+                <div class="card h-100">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/e/ec/Swayambhunath_Temple.jpg" class="card-img-top" alt="Swayambhunath">
+                    <div class="card-body">
+                        <a href="#" class="card-title text-decoration-none text-dark">Swayambhunath (Monkey Temple)</a>
+                        <p class="card-text">Swayambhunath is a UNESCO World Heritage Site in Kathmandu Valley.</p>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-primary book-btn">Book</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pashupatinath Temple -->
+            <div class="col">
+                <div class="card h-100">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/7/7b/Pashupatinath.jpg" class="card-img-top" alt="Pashupatinath Temple">
+                    <div class="card-body">
+                        <a href="#" class="card-title text-decoration-none text-dark">Pashupatinath Temple</a>
+                        <p class="card-text">A sacred Hindu temple located on the banks of the Bagmati River in Kathmandu.</p>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-primary book-btn">Book</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Boudhanath Stupa -->
+            <div class="col">
+                <div class="card h-100">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Boudhanath_Stupa_%28Nepal%29.jpg" class="card-img-top" alt="Boudhanath Stupa">
+                    <div class="card-body">
+                        <a href="#" class="card-title text-decoration-none text-dark">Boudhanath Stupa</a>
+                        <p class="card-text">A giant Buddhist stupa and a pilgrimage site for Tibetan Buddhists.</p>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-primary book-btn">Book</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mount Everest Base Camp -->
+            <div class="col">
+                <div class="card h-100">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/e/ec/Mount_Everest_base_camp.jpg" class="card-img-top" alt="Mount Everest Base Camp">
+                    <div class="card-body">
+                        <a href="#" class="card-title text-decoration-none text-dark">Mount Everest Base Camp</a>
+                        <p class="card-text">A famous trek to the base camp of the highest mountain on Earth.</p>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-primary book-btn">Book</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Lumbini (Birthplace of Buddha) -->
+            <div class="col">
+                <div class="card h-100">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2d/Lumbini_Mayadevi_Temple.jpg" class="card-img-top" alt="Lumbini">
+                    <div class="card-body">
+                        <a href="#" class="card-title text-decoration-none text-dark">Lumbini (Birthplace of Buddha)</a>
+                        <p class="card-text">A significant pilgrimage site, the birthplace of Siddhartha Gautama, the Buddha.</p>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-primary book-btn">Book</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Chitwan National Park -->
+            <div class="col">
+                <div class="card h-100">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/4f/Chitwan_National_Park_Nepal.jpg" class="card-img-top" alt="Chitwan National Park">
+                    <div class="card-body">
+                        <a href="#" class="card-title text-decoration-none text-dark">Chitwan National Park</a>
+                        <p class="card-text">Known for its wildlife, including rhinos, tigers, and elephants.</p>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-primary book-btn">Book</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Annapurna Circuit Trek -->
+            <div class="col">
+                <div class="card h-100">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Annapurna_circuit.jpg" class="card-img-top" alt="Annapurna Circuit Trek">
+                    <div class="card-body">
+                        <a href="#" class="card-title text-decoration-none text-dark">Annapurna Circuit Trek</a>
+                        <p class="card-text">A world-renowned trekking route offering spectacular views of the Himalayas.</p>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-primary book-btn">Book</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bhaktapur Durbar Square -->
+            <div class="col">
+                <div class="card h-100">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/f/f5/Bhaktapur_Durbar_Square_2019.jpg" class="card-img-top" alt="Bhaktapur Durbar Square">
+                    <div class="card-body">
+                        <a href="#" class="card-title text-decoration-none text-dark">Bhaktapur Durbar Square</a>
+                        <p class="card-text">A historical square with ancient temples, palaces, and courtyards in Bhaktapur.</p>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-primary book-btn">Book</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Rara Lake -->
+            <div class="col">
+                <div class="card h-100">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/58/Rara_Lake.jpg" class="card-img-top" alt="Rara Lake">
+                    <div class="card-body">
+                        <a href="#" class="card-title text-decoration-none text-dark">Rara Lake</a>
+                        <p class="card-text">The largest lake in Nepal, located in the remote northwestern region of the country.</p>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-primary book-btn">Book</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pokhara -->
+            <div class="col">
+                <div class="card h-100">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/3/37/Pokhara_and_Lake_Pokhara.jpg" class="card-img-top" alt="Pokhara">
+                    <div class="card-body">
+                        <a href="#" class="card-title text-decoration-none text-dark">Pokhara</a>
+                        <p class="card-text">A scenic city known for its lakes, mountains, and adventure activities.</p>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-primary book-btn">Book</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-4 mt-5">
+        <p>&copy; 2024 Your Company. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2
