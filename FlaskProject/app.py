@@ -1,4 +1,4 @@
-from flask import Flask, render_template, redirect, url_for, request, make_response
+from flask import Flask, render_template, redirect, url_for, request, make_response, jsonify
 from models import User
 import databaseOperations as db
 from flask_mail import Mail, Message  #pip install flask-mail
@@ -24,15 +24,23 @@ mail = Mail(app)
 def home():     
     return render_template('Login.html')
 
-@app.route('/send_email')#, methods=['POST']
-def send_email():    
-    msg = Message( 
-                'Hello', 
-                sender ='balkrishna.panthi.dev@gmail.como', 
-                recipients =['panthisachin22@gmail.com','pandeybikram570@gmail.com']
-               ) 
-    msg.body = 'Hello Flask message sent from Flask-Mail for test'
-    mail.send(msg) 
+@app.route('/send_email', methods=['POST'])
+def send_email(): 
+    data = request.get_json()
+    param = data.get('param')
+    
+    try:
+        msg = Message(
+            'Hello',
+            sender='balkrishna.panthi.dev@gmail.com',
+            recipients=['balkrishnapanthi22@gmail.com']
+        )
+        msg.body = f'Your booking details for {param} will be sent shortly.'
+        mail.send(msg)
+        
+        return jsonify({'status': 'success', 'message': 'Email sent successfully'})
+    except Exception as e:
+        return jsonify({'status': 'error', 'error': str(e)})
    
    
 

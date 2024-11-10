@@ -176,7 +176,7 @@
                         <p class="card-text">A scenic city known for its lakes, mountains, and adventure activities.</p>
                     </div>
                     <div class="card-footer">
-                        <button class="btn btn-primary book-btn">Book</button>
+                        <button class="btn btn-primary book-btn" data-param="Pokhara">Book</button>
                     </div>
                 </div>
             </div>
@@ -188,6 +188,41 @@
         <p>&copy; 2024 Your Company. All Rights Reserved.</p>
     </footer>
 
-    <!-- Bootstrap JS and dependencies -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2
+     <!-- Bootstrap JS and dependencies -->
+     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+     <script>
+        // Add event listener to all buttons with class 'book-btn'
+        document.querySelectorAll('.book-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                // Get the data from the clicked button
+                let paramValue = this.getAttribute('data-param');
+                
+                // Send data to Flask
+                fetch('/send_email', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ param: paramValue })
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.status === 'success') {
+                        alert('Booking details has been sent via email to the registered user!');
+                    } else {
+                        alert('Failed to send email: ' + data.error);
+                    }
+                    console.log('Success:', data);
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('An error occurred while sending the email.');
+                });
+            });
+        });
+    </script>
+    
+ </body>
+ </html>
