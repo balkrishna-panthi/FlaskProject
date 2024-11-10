@@ -1,13 +1,41 @@
 from flask import Flask, render_template, redirect, url_for, request, make_response
 from models import User
 import databaseOperations as db
+from flask_mail import Mail, Message  #pip install flask-mail
 
 app = Flask(__name__)
 
+
+# Configure Flask-Mail
+# Gmail configuration with App Password
+app.config['MAIL_SERVER'] = 'smtp.gmail.com'
+app.config['MAIL_PORT'] = 465  # Port 465 for SSL
+app.config['MAIL_USE_SSL'] = True  # Use SSL for port 465
+app.config['MAIL_USE_TLS'] = False  # No TLS for port 465
+app.config['MAIL_USERNAME'] = 'balkrishna.panthi.dev@gmail.com'  # Replace with your email
+app.config['MAIL_PASSWORD'] = 'jmyf degy mtsi ddyv'  # Replace with your email password
+app.config['MAIL_DEFAULT_SENDER'] = 'balkrishna.panthi.dev@gmail.com'  # Replace with your email
+
+mail = Mail(app) 
+
+
 @app.route('/')
 #@app.route('/SignupSceens', methods=['POST'])
-def home():   
+def home():     
     return render_template('Login.html')
+
+@app.route('/send_email')#, methods=['POST']
+def send_email():    
+    msg = Message( 
+                'Hello', 
+                sender ='balkrishna.panthi.dev@gmail.como', 
+                recipients =['panthisachin22@gmail.com','pandeybikram570@gmail.com']
+               ) 
+    msg.body = 'Hello Flask message sent from Flask-Mail for test'
+    mail.send(msg) 
+   
+   
+
 
 
 @app.route('/China')
