@@ -111,7 +111,8 @@
 
                 <button type="submit" class="signup-btn">Sign Up</button>
                 Have an account?
-                <button class="login-btn" onclick="window.location.href='{{ url_for('login') }}'">Log In</button>
+                <a class="login-btn" href="{{ url_for('login') }}">Log In</a>
+
             </form>
 
             <div class="login-text">

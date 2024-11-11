@@ -22,4 +22,12 @@ def insertUserRecords(user : User):
         connection.commit()
         #connection.close()
         #rows = cur.fetchall()
+
+def getUserNameFromEmail(email):
+     with sql.connect("Database.db") as connection:
+        cur = connection.cursor()
+        cur.execute('SELECT * FROM users WHERE email = ?', (email,))
+        row = cur.fetchone()
+        name = row[1]
+        return name
         

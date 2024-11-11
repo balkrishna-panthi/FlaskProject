@@ -2,6 +2,7 @@ from flask import Flask, render_template, redirect, url_for, request, make_respo
 from models import User
 import databaseOperations as db
 from flask_mail import Mail, Message  #pip install flask-mail
+from datetime import datetime
 
 app = Flask(__name__)
 
@@ -28,14 +29,47 @@ def home():
 def send_email(): 
     data = request.get_json()
     param = data.get('param')
+    booking_date = datetime.now()
+    email = get_cookie()
+    name = db.getUserNameFromEmail(email)
+
     
     try:
         msg = Message(
-            'Hello',
-            sender='balkrishna.panthi.dev@gmail.com',
-            recipients=['balkrishnapanthi22@gmail.com']
+            f'Booking details for {param}',
+            sender='Explore Asia',
+            recipients=[email]
         )
         msg.body = f'Your booking details for {param} will be sent shortly.'
+        msg.html = f"""
+        <html>
+        <body style="font-family: Arial, sans-serif; color: #333;">
+            <h2>Your Booking Details</h2>
+            <p>Dear {name},</p>
+            <p>Thank you for booking with us. Below are your booking details:</p>
+
+            <table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
+                <tr>
+                    <th style="border: 1px solid #ddd; padding: 8px; background-color: #4CAF50; color: white;">Name</th>                   
+                    <th style="border: 1px solid #ddd; padding: 8px; background-color: #4CAF50; color: white;">Booking Date</th>
+                    <th style="border: 1px solid #ddd; padding: 8px; background-color: #4CAF50; color: white;">Place</th>
+                    <th style="border: 1px solid #ddd; padding: 8px; background-color: #4CAF50; color: white;">Details</th>
+                    <th style="border: 1px solid #ddd; padding: 8px; background-color: #4CAF50; color: white;">Remarks</th>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">{name}</td>                    
+                    <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">{booking_date}</td>
+                    <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">{param}</td>
+                    <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">Details will be sent shortly</td>
+                    <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">One of our representives will connect you via mail</td>
+                </tr>
+            </table>
+
+            <p>We look forward to serving you!</p>
+            <p>Best regards,<br>Booking Team</p>
+        </body>
+        </html>
+        """
         mail.send(msg)
         
         return jsonify({'status': 'success', 'message': 'Email sent successfully'})
@@ -133,7 +167,7 @@ def signup():
         email = request.form.get('email')
         password = request.form.get('password')
         user = User (first_name, middle_name, last_name, email, password)
-
+        db.insertUserRecords(user)
         # After processing the form, redirect or render a new page
         return render_template('SignupSceens.html')  # You can redirect or display a success message
 
@@ -161,6 +195,9 @@ def login():
             return render_template('Login.html', error_message=error_message)  # Show error on the login page
     return render_template('Login.html')
 
+def get_cookie():
+   
+    return request.cookies.get('email')
 
 @app.route('/setcookie')
 def set_cookie():
