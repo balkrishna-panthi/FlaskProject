@@ -25,22 +25,30 @@ mail = Mail(app)
 def home():     
     return render_template('Login.html')
 
-@app.route('/send_email', methods=['POST'])
-def send_email(): 
-    data = request.get_json()
-    param = data.get('param')
-    booking_date = datetime.now()
-    email = get_cookie()
-    name = db.getUserNameFromEmail(email)
+@app.route('/make_booking', methods=['POST'])
+def make_booking(): 
+    try:
+        data = request.get_json()
+        place = data.get('param')
+        booking_date = datetime.now()
+        email = get_cookie()
+        name = db.getUserNameFromEmail(email)
+        db.insertBookingRecords(email, place)
+        send_email(place, email, name ,booking_date)
+        return jsonify({'status': 'success', 'message': 'Booked'})
+    except Exception as e:
+        return jsonify({'status': 'error', 'error': str(e)})
 
-    
+
+@app.route('/send_email', methods=['POST'])
+def send_email(place, email, name, booking_date):
     try:
         msg = Message(
-            f'Booking details for {param}',
+            f'Booking details for {place}',
             sender='Explore Asia',
             recipients=[email]
         )
-        msg.body = f'Your booking details for {param} will be sent shortly.'
+        msg.body = f'Your booking details for {place} will be sent shortly.'
         msg.html = f"""
         <html>
         <body style="font-family: Arial, sans-serif; color: #333;">
@@ -59,7 +67,7 @@ def send_email():
                 <tr>
                     <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">{name}</td>                    
                     <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">{booking_date}</td>
-                    <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">{param}</td>
+                    <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">{place}</td>
                     <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">Details will be sent shortly</td>
                     <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">One of our representives will connect you via mail</td>
                 </tr>
@@ -198,6 +206,16 @@ def login():
 def get_cookie():
    
     return request.cookies.get('email')
+
+@app.route('/BookingDetails')
+def bookingdetails():
+    email = get_cookie()  
+    print("Email in get_cookie:", email)
+    allBookingDetails = db.getAllBookingDetailsFromEmail(email)  # Fetch booking details from the database  
+    for d in allBookingDetails:
+        print(f'{d.id} {d.email} {d.place} {d.bookingDate} {d.remarks}')
+    return render_template('bookingDetails.html', allBookingDetails=allBookingDetails)
+
 
 @app.route('/setcookie')
 def set_cookie():

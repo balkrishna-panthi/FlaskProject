@@ -6,3 +6,12 @@ class User:
         self.email = email
         self.password = password
         self.role = role
+
+class Booking:
+    def __init__(self, id, email, place, bookingDate, remarks):
+        self.id = id
+        self.email = email
+        self.place = place
+        self.bookingDate = bookingDate
+        self.remarks = remarks
+       
