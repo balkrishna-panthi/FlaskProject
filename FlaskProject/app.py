@@ -1,11 +1,10 @@
-from flask import Flask, render_template, redirect, url_for, request, make_response, jsonify
+from flask import Flask, render_template, redirect, url_for, request, make_response, jsonify, g
 from models import User
 import databaseOperations as db
 from flask_mail import Mail, Message  #pip install flask-mail
 from datetime import datetime
 
 app = Flask(__name__)
-
 
 # Configure Flask-Mail
 # Gmail configuration with App Password
@@ -19,6 +18,13 @@ app.config['MAIL_DEFAULT_SENDER'] = 'balkrishna.panthi.dev@gmail.com'  # Replace
 
 mail = Mail(app) 
 
+@app.before_request
+def before_request():
+    email = request.cookies.get('email')  # Get the user's email from the cookie
+    if email:
+        g.fullname = db.getFullNameFromEmail(email)  # Retrieve the user's fullname using the email
+    else:
+        g.fullname = None  # Set as None or Guest if the user is not logged in
 
 @app.route('/')
 #@app.route('/SignupSceens', methods=['POST'])
@@ -162,7 +168,9 @@ def indiabook():
 
 
 
-
+@app.route('/Profile')
+def profile():   
+    return render_template('Profile.html')
 
 
 
@@ -196,7 +204,8 @@ def login():
             
             # Set a cookie with the user's email
             response.set_cookie('email', email)  # You can also set expiry or secure flag here if needed
-            
+           # response.set_cookie('name', db.getFullNameFromEmail(email))
+            g.fullname = db.getFullNameFromEmail(email)
             return response  # Return the response object with the cookie
         else:
             error_message = "Invalid email or password."  # Error message if login fails

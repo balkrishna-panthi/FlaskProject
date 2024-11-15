@@ -53,5 +53,15 @@ def getAllBookingDetailsFromEmail(email):
             #print(f'{d.id}' + ' ' + d.email + ' '+ d.place + ' ' + d.bookingDate + ' ' + d.remarks)
         
         return bookingDetails
+    
+def getFullNameFromEmail(email):
+    with sql.connect("Database.db") as connection:
+        cur = connection.cursor()
+        cur.execute('SELECT * FROM users WHERE email = ?', (email,))
+        row = cur.fetchone()
+        firstname = row[1]
+        middlename = row[2]
+        lastname = row[3]
+        return firstname + ' ' + middlename + ' ' + lastname
 
         

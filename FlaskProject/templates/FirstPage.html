@@ -1,91 +1,81 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Image Layout</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body, html {
-            height: 100%;
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background: url('{{ url_for('static', filename='ProjectImages/Background2.jpg') }}') no-repeat center center fixed;
-            background-size: cover;
-        }
-
-        .container {
-            display: grid;
-            grid-template-columns: 125px auto 125px;
-            grid-template-rows: 165px 165px 166px;
-            gap: 40px;
-            width: 80%;
-            max-width: 1200px;
-        }
-
-        .container button {
-            background: none;
-            border: none;
-            cursor: pointer;
-            width: 125px;
-            height: 165px;
-        }
-
-        .container button img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        /* Grid positioning similar to the XAML layout */
-        .monas { grid-column: 1; grid-row: 1; }
-        .twin-tower { grid-column: 2; grid-row: 1; }
-        .great-wall { grid-column: 3; grid-row: 1; }
-
-        .taj-mahal { grid-column: 1; grid-row: 2; }
-        .kathmandu { grid-column: 2; grid-row: 2; }
-        .philippines { grid-column: 3; grid-row: 2; }
-
-        .singapore1 { grid-column: 1 / span 2; grid-row: 3; justify-self: center; }
-        .srilanka { grid-column: 2 / span 2; grid-row: 3; justify-self: center; }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <button class="monas"><img src="{{ url_for('static', filename='ProjectImages/Monas.jpg') }}" alt="Monas"></button>
-        <button class="twin-tower"><img src="{{ url_for('static', filename='ProjectImages/TwinTower.jpg') }}" alt="Twin Towers"></button>
-        <button class="great-wall"><img src="{{ url_for('static', filename='ProjectImages/GreatWall.jpg') }}" alt="Great Wall"></button>
-        <button class="taj-mahal"><img src="{{ url_for('static', filename='ProjectImages/TajMahal.jpg') }}" alt="Taj Mahal"></button>
-        <button class="kathmandu"><img src="{{ url_for('static', filename='ProjectImages/Kathmandu.jpg') }}" alt="Kathmandu"></button>
-        <button class="philippines"><img src="{{ url_for('static', filename='ProjectImages/Philippines.jpg') }}" alt="Philippines"></button>
-        <button class="singapore1"><img src="{{ url_for('static', filename='ProjectImages/Singapore.jpg') }}" alt="Singapore"></button>
-        <button class="srilanka"><img src="{{ url_for('static', filename='ProjectImages/Singapore.jpg') }}" alt="Srilanka"></button>
-    </div>
-</body>
-</html> -->
-
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Image Layout</title>
+    <title>Explore Asia</title>
     <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <style>
+        /* General Body Styling */
+/*        
+        body {
+            background: url('{{ url_for('static', filename='ProjectImages/Background2.jpg') }}') no-repeat center center fixed;
+            background-size: cover;
+            font-family: 'Arial', sans-serif;
+            color: #fff;
+        } */
+        /* Header Styling */
+        .navbar {
+            background-color: rgba(0, 0, 0, 0.6);
+        }
+
+        .navbar-brand {
+            font-weight: bold;
+            color: #fff;
+            font-size: 1.8rem;
+        }
+
+        .navbar-nav .nav-link {
+            color: #fff !important;
+            margin-left: 20px;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: #f39c12 !important;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            text-align: center;
+            padding: 80px 20px;
+            background-color: rgba(0, 0, 0, 0.6);
+            border-radius: 10px;
+        }
+
+        .hero-section h1 {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .hero-section p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+
+        .hero-section .btn {
+            background-color: #f39c12;
+            color: #fff;
+            border-radius: 50px;
+            padding: 10px 30px;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+        }
+
+        .hero-section .btn:hover {
+            background-color: #e67e22;
+        }
+
         /* Ensure all cards have uniform height and size */
         .card {
             height: 100%;
             display: flex;
             flex-direction: column;
+            border: none;
+            border-radius: 15px;
+            transition: transform 0.3s ease-in-out;
         }
 
         .card-body {
@@ -93,30 +83,80 @@
         }
 
         .card-img-top {
-            object-fit: cover; /* Ensure images cover the space without distortion */
-            height: 200px; /* Set a uniform height for all images */
+            object-fit: cover;
+            height: 200px;
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+        }
+
+        .card-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #333;
         }
 
         .card-footer {
             text-align: center;
+            background-color: #f8f9fa;
+            border-bottom-left-radius: 15px;
+            border-bottom-right-radius: 15px;
+        }
+
+        /* Hover Effect on Cards */
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Footer Styling */
+        footer {
+            background-color: rgba(0, 0, 0, 0.8);
+            color: #fff;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        /* Responsive Grid */
+        @media (max-width: 768px) {
+            .container {
+                width: 100%;
+            }
+        }
+
+        /* Spacer for header and footer */
+        .spacer {
+            height: 20px;
         }
     </style>
 </head>
+
 <body>
+
+    <!-- Header -->
     <div class="header">
         {% include 'header.html' %}
+        </div>
+
+    <!-- Hero Section -->
+    <div class="hero-section">
+        <h1>Welcome to Explore Asia</h1>
+        <p>Discover the beauty, culture, and wonders of Asia through our carefully curated destinations.</p>
+        <a href="#destinations" class="btn">Explore Now</a>
     </div>
 
     <!-- Card Layout -->
-    <div class="container my-5">
+    <div class="container my-5" id="destinations">
+        <h2 class="text-center text-warning mb-5">Top Destinations in Asia</h2>
         <div class="row row-cols-1 row-cols-md-3 g-4">
             <!-- Monas -->
             <div class="col">
                 <div class="card h-100">
                     <img src="{{ url_for('static', filename='ProjectImages/Monas.jpg') }}" class="card-img-top" alt="Monas">
                     <div class="card-body">
-                        <a href="{{ url_for('indonesia') }}" class="card-title text-decoration-none text-dark font-weight-bold">Indonesia</a>
-                        <p class="card-text">This is Monas, a famous landmark in Indonesia.</p>
+                        <a href="{{ url_for('indonesia') }}" class="card-title text-decoration-none text-dark">Indonesia</a>
+                        <p class="card-text">"Monas - a symbol of Indonesia's struggle for independence."</p>
                     </div>
                     <div class="card-footer">
                         <small class="text-muted">Last updated 3 mins ago</small>
@@ -129,8 +169,8 @@
                 <div class="card h-100">
                     <img src="{{ url_for('static', filename='ProjectImages/TwinTower.jpg') }}" class="card-img-top" alt="Twin Towers">
                     <div class="card-body">
-                        <a href="{{ url_for('malaysia') }}" class="card-title text-decoration-none text-dark font-weight-bold">Malaysia</a>
-                        <p class="card-text">The iconic Twin Towers in Kuala Lumpur, Malaysia.</p>
+                        <a href="{{ url_for('malaysia') }}" class="card-title text-decoration-none text-dark">Malaysia</a>
+                        <p class="card-text">"The Petronas Towers - a breathtaking marvel of architecture in Malaysia."</p>
                     </div>
                     <div class="card-footer">
                         <small class="text-muted">Last updated 3 mins ago</small>
@@ -143,8 +183,8 @@
                 <div class="card h-100">
                     <img src="{{ url_for('static', filename='ProjectImages/GreatWall.jpg') }}" class="card-img-top" alt="Great Wall">
                     <div class="card-body">
-                        <a href="{{ url_for('china') }}" class="card-title text-decoration-none text-dark font-weight-bold">China</a>
-                        <p class="card-text">One of the greatest wonders, the Great Wall of China.</p>
+                        <a href="{{ url_for('china') }}" class="card-title text-decoration-none text-dark">China</a>
+                        <p class="card-text">"The Great Wall of China – An ancient wonder of the world."</p>
                     </div>
                     <div class="card-footer">
                         <small class="text-muted">Last updated 3 mins ago</small>
@@ -157,8 +197,8 @@
                 <div class="card h-100">
                     <img src="{{ url_for('static', filename='ProjectImages/TajMahal.jpg') }}" class="card-img-top" alt="Taj Mahal">
                     <div class="card-body">
-                        <a href="{{ url_for('india') }}" class="card-title text-decoration-none text-dark font-weight-bold">India</a>
-                        <p class="card-text">The Taj Mahal in India, known for its stunning beauty.</p>
+                        <a href="{{ url_for('india') }}" class="card-title text-decoration-none text-dark">India</a>
+                        <p class="card-text">"The Taj Mahal – A symbol of eternal love and grandeur in India."</p>
                     </div>
                     <div class="card-footer">
                         <small class="text-muted">Last updated 3 mins ago</small>
@@ -171,50 +211,8 @@
                 <div class="card h-100">
                     <img src="{{ url_for('static', filename='ProjectImages/Kathmandu.jpg') }}" class="card-img-top" alt="Kathmandu">
                     <div class="card-body">
-                        <a href="{{ url_for('nepal') }}" class="card-title text-decoration-none text-dark font-weight-bold">Nepal</a>
-                        <p class="card-text">The capital city of Nepal, rich in history and culture.</p>
-                    </div>
-                    <div class="card-footer">
-                        <small class="text-muted">Last updated 3 mins ago</small>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Philippines -->
-            <div class="col">
-                <div class="card h-100">
-                    <img src="{{ url_for('static', filename='ProjectImages/Philippines.jpg') }}" class="card-img-top" alt="Philippines">
-                    <div class="card-body">
-                        <a href="{{ url_for('philippines') }}" class="card-title text-decoration-none text-dark font-weight-bold">Philippines</a>
-                        <p class="card-text">A tropical paradise with beautiful beaches and islands.</p>
-                    </div>
-                    <div class="card-footer">
-                        <small class="text-muted">Last updated 3 mins ago</small>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Singapore -->
-            <div class="col">
-                <div class="card h-100">
-                    <img src="{{ url_for('static', filename='ProjectImages/Singapore.jpg') }}" class="card-img-top" alt="Singapore">
-                    <div class="card-body">
-                        <a href="{{ url_for('singapore') }}" class="card-title text-decoration-none text-dark font-weight-bold">Singapore</a>
-                        <p class="card-text">A global financial hub known for its modern architecture.</p>
-                    </div>
-                    <div class="card-footer">
-                        <small class="text-muted">Last updated 3 mins ago</small>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Sri Lanka -->
-            <div class="col">
-                <div class="card h-100">
-                    <img src="{{ url_for('static', filename='ProjectImages/SriLanka.jpg') }}" class="card-img-top" alt="Sri Lanka">
-                    <div class="card-body">
-                        <a href="{{ url_for('srilanka') }}" class="card-title text-decoration-none text-dark font-weight-bold">Sri Lanka</a>
-                        <p class="card-text">A beautiful island nation known for its beaches and tea plantations.</p>
+                        <a href="{{ url_for('nepal') }}" class="card-title text-decoration-none text-dark">Nepal</a>
+                        <p class="card-text">"Kathmandu – Where ancient traditions and vibrant culture meet."</p>
                     </div>
                     <div class="card-footer">
                         <small class="text-muted">Last updated 3 mins ago</small>
@@ -225,14 +223,14 @@
     </div>
 
     <!-- Footer -->
-    <footer class="bg-dark text-white text-center py-4 mt-5">
-        <p>&copy; 2024 Your Company. All Rights Reserved.</p>
+    <footer class="text-center py-3">
+        <p>&copy; 2024 Explore Asia. All rights reserved.</p>
     </footer>
 
-    <!-- Bootstrap JS and dependencies -->
+    <!-- Bootstrap JS, Popper.js, and jQuery -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
-</html>
 
+</html>
