@@ -100,6 +100,27 @@
     <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <style>
+/* Loader styling */
+.loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            display: none; /* Hidden initially */
+        }
+
+        .loader .spinner-border {
+            width: 3rem;
+            height: 3rem;
+            color: #007bff;
+        }
+
         /* Ensure all cards have uniform height and size */
         .card {
             height: 100%;
@@ -131,6 +152,13 @@
         {% include 'header.html' %}
     </div>
 
+      <!-- Loader Element -->
+      <div class="loader" id="loader">
+        <div class="spinner-border" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+
     <!-- Card Layout -->
     <div class="container my-5">
         <div class="row row-cols-1 row-cols-md-3 g-4">
@@ -143,11 +171,11 @@
                         <p class="card-text">A historical marvel stretching over 13,000 miles, one of the most iconic landmarks in China.</p>
                     </div>
                     <div class="card-footer">
-                        <button class="btn btn-primary book-btn">Book</button>
+                        <button class="btn btn-primary book-btn" data-param="Great Wall of China">Book</button>
                     </div>
                 </div>
             </div>
-
+    
             <!-- Forbidden City -->
             <div class="col">
                 <div class="card h-100">
@@ -157,11 +185,11 @@
                         <p class="card-text">A UNESCO World Heritage Site and former imperial palace located in Beijing.</p>
                     </div>
                     <div class="card-footer">
-                        <button class="btn btn-primary book-btn">Book</button>
+                        <button class="btn btn-primary book-btn" data-param="Forbidden City">Book</button>
                     </div>
                 </div>
             </div>
-
+    
             <!-- Terracotta Army -->
             <div class="col">
                 <div class="card h-100">
@@ -171,11 +199,11 @@
                         <p class="card-text">Thousands of life-sized sculptures depicting the army of Qin Shi Huang, the first Emperor of China.</p>
                     </div>
                     <div class="card-footer">
-                        <button class="btn btn-primary book-btn">Book</button>
+                        <button class="btn btn-primary book-btn" data-param="Terracotta Army">Book</button>
                     </div>
                 </div>
             </div>
-
+    
             <!-- Li River -->
             <div class="col">
                 <div class="card h-100">
@@ -185,11 +213,11 @@
                         <p class="card-text">Known for its stunning limestone karst peaks and a popular destination for river cruises in southern China.</p>
                     </div>
                     <div class="card-footer">
-                        <button class="btn btn-primary book-btn">Book</button>
+                        <button class="btn btn-primary book-btn" data-param="Li River">Book</button>
                     </div>
                 </div>
             </div>
-
+    
             <!-- Mount Huangshan -->
             <div class="col">
                 <div class="card h-100">
@@ -199,11 +227,11 @@
                         <p class="card-text">Famous for its uniquely shaped granite peaks, pine trees, and sea of clouds.</p>
                     </div>
                     <div class="card-footer">
-                        <button class="btn btn-primary book-btn">Book</button>
+                        <button class="btn btn-primary book-btn" data-param="Mount Huangshan">Book</button>
                     </div>
                 </div>
             </div>
-
+    
             <!-- Summer Palace -->
             <div class="col">
                 <div class="card h-100">
@@ -213,11 +241,11 @@
                         <p class="card-text">A vast imperial garden and palace complex located in Beijing, a UNESCO World Heritage Site.</p>
                     </div>
                     <div class="card-footer">
-                        <button class="btn btn-primary book-btn">Book</button>
+                        <button class="btn btn-primary book-btn" data-param="Summer Palace">Book</button>
                     </div>
                 </div>
             </div>
-
+    
             <!-- Zhangjiajie National Forest Park -->
             <div class="col">
                 <div class="card h-100">
@@ -227,11 +255,11 @@
                         <p class="card-text">Famous for its towering sandstone pillars, which inspired the floating mountains in the movie "Avatar."</p>
                     </div>
                     <div class="card-footer">
-                        <button class="btn btn-primary book-btn">Book</button>
+                        <button class="btn btn-primary book-btn" data-param="Zhangjiajie National Forest Park">Book</button>
                     </div>
                 </div>
             </div>
-
+    
             <!-- Potala Palace -->
             <div class="col">
                 <div class="card h-100">
@@ -241,11 +269,11 @@
                         <p class="card-text">A former residence of the Dalai Lama and a sacred pilgrimage site in Lhasa, Tibet.</p>
                     </div>
                     <div class="card-footer">
-                        <button class="btn btn-primary book-btn">Book</button>
+                        <button class="btn btn-primary book-btn" data-param="Potala Palace">Book</button>
                     </div>
                 </div>
             </div>
-
+    
             <!-- West Lake -->
             <div class="col">
                 <div class="card h-100">
@@ -255,11 +283,11 @@
                         <p class="card-text">A scenic freshwater lake in Hangzhou, famous for its picturesque landscapes and cultural significance.</p>
                     </div>
                     <div class="card-footer">
-                        <button class="btn btn-primary book-btn">Book</button>
+                        <button class="btn btn-primary book-btn" data-param="West Lake">Book</button>
                     </div>
                 </div>
             </div>
-
+    
             <!-- Jiuzhaigou Valley -->
             <div class="col">
                 <div class="card h-100">
@@ -269,11 +297,11 @@
                         <p class="card-text">A UNESCO World Heritage Site known for its crystal-clear lakes, waterfalls, and snow-capped mountains.</p>
                     </div>
                     <div class="card-footer">
-                        <button class="btn btn-primary book-btn">Book</button>
+                        <button class="btn btn-primary book-btn" data-param="Jiuzhaigou Valley">Book</button>
                     </div>
                 </div>
             </div>
-
+    
             <!-- Yellow Mountain (Huangshan) -->
             <div class="col">
                 <div class="card h-100">
@@ -283,12 +311,13 @@
                         <p class="card-text">Known for its steep granite peaks, ancient pine trees, and misty views, it is a UNESCO World Heritage Site.</p>
                     </div>
                     <div class="card-footer">
-                        <button class="btn btn-primary book-btn">Book</button>
+                        <button class="btn btn-primary book-btn" data-param="Yellow Mountain">Book</button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    
 
     <!-- Footer -->
     <div class="footer">
@@ -299,5 +328,44 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        const loader = document.getElementById('loader');
+
+        // Add event listener to all buttons with class 'book-btn'
+        document.querySelectorAll('.book-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                // Show the loader
+                loader.style.display = 'flex';
+
+                // Get the data from the clicked button
+                let paramValue = this.getAttribute('data-param');
+                
+                // Send data to Flask
+                fetch('/make_booking', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ param: paramValue })
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.status === 'success') {
+                        alert('Booking details have been sent via email to the registered user!');
+                    } else {
+                        alert('Failed to send email: ' + data.error);
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('An error occurred while sending the email.');
+                })
+                .finally(() => {
+                    // Hide the loader
+                    loader.style.display = 'none';
+                });
+            });
+        });
+    </script>
 </body>
 </html>

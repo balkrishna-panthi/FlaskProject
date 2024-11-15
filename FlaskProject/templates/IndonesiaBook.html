@@ -7,6 +7,28 @@
     <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <style>
+
+/* Loader styling */
+.loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            display: none; /* Hidden initially */
+        }
+
+        .loader .spinner-border {
+            width: 3rem;
+            height: 3rem;
+            color: #007bff;
+        }
+
         /* Ensure all cards have uniform height and size */
         .card {
             height: 100%;
@@ -38,6 +60,13 @@
         {% include 'header.html' %}
     </div>
 
+  <!-- Loader Element -->
+  <div class="loader" id="loader">
+    <div class="spinner-border" role="status">
+        <span class="sr-only">Loading...</span>
+    </div>
+</div>
+
     <!-- Card Layout -->
     <div class="container my-5">
         <div class="row row-cols-1 row-cols-md-3 g-4">
@@ -50,11 +79,11 @@
                         <p class="card-text">A UNESCO World Heritage Site, the largest Buddhist temple in the world, located in Java.</p>
                     </div>
                     <div class="card-footer">
-                        <button class="btn btn-primary book-btn">Book</button>
+                        <button class="btn btn-primary book-btn" data-param="Borobudur Temple">Book</button>
                     </div>
                 </div>
             </div>
-
+    
             <!-- Bali -->
             <div class="col">
                 <div class="card h-100">
@@ -64,11 +93,11 @@
                         <p class="card-text">An island destination famous for its beaches, temples, and vibrant culture.</p>
                     </div>
                     <div class="card-footer">
-                        <button class="btn btn-primary book-btn">Book</button>
+                        <button class="btn btn-primary book-btn" data-param="Bali">Book</button>
                     </div>
                 </div>
             </div>
-
+    
             <!-- Komodo Island -->
             <div class="col">
                 <div class="card h-100">
@@ -78,11 +107,11 @@
                         <p class="card-text">Famous for the Komodo dragons, a UNESCO World Heritage Site, and incredible diving spots.</p>
                     </div>
                     <div class="card-footer">
-                        <button class="btn btn-primary book-btn">Book</button>
+                        <button class="btn btn-primary book-btn" data-param="Komodo Island">Book</button>
                     </div>
                 </div>
             </div>
-
+    
             <!-- Mount Bromo -->
             <div class="col">
                 <div class="card h-100">
@@ -92,11 +121,11 @@
                         <p class="card-text">An active volcano in East Java, known for its stunning sunrise views and surrounding landscapes.</p>
                     </div>
                     <div class="card-footer">
-                        <button class="btn btn-primary book-btn">Book</button>
+                        <button class="btn btn-primary book-btn" data-param="Mount Bromo">Book</button>
                     </div>
                 </div>
             </div>
-
+    
             <!-- Ubud -->
             <div class="col">
                 <div class="card h-100">
@@ -106,11 +135,11 @@
                         <p class="card-text">Known for its terraced rice paddies, yoga retreats, and arts scene in the heart of Bali.</p>
                     </div>
                     <div class="card-footer">
-                        <button class="btn btn-primary book-btn">Book</button>
+                        <button class="btn btn-primary book-btn" data-param="Ubud">Book</button>
                     </div>
                 </div>
             </div>
-
+    
             <!-- Raja Ampat -->
             <div class="col">
                 <div class="card h-100">
@@ -120,11 +149,11 @@
                         <p class="card-text">An archipelago known for its pristine beaches, crystal-clear waters, and world-class diving.</p>
                     </div>
                     <div class="card-footer">
-                        <button class="btn btn-primary book-btn">Book</button>
+                        <button class="btn btn-primary book-btn" data-param="Raja Ampat">Book</button>
                     </div>
                 </div>
             </div>
-
+    
             <!-- Tana Toraja -->
             <div class="col">
                 <div class="card h-100">
@@ -134,11 +163,11 @@
                         <p class="card-text">Famous for its traditional funeral rites, unique architecture, and scenic mountain landscapes.</p>
                     </div>
                     <div class="card-footer">
-                        <button class="btn btn-primary book-btn">Book</button>
+                        <button class="btn btn-primary book-btn" data-param="Tana Toraja">Book</button>
                     </div>
                 </div>
             </div>
-
+    
             <!-- Gili Islands -->
             <div class="col">
                 <div class="card h-100">
@@ -148,11 +177,11 @@
                         <p class="card-text">Three small islands in Lombok, known for their white sandy beaches, crystal-clear waters, and coral reefs.</p>
                     </div>
                     <div class="card-footer">
-                        <button class="btn btn-primary book-btn">Book</button>
+                        <button class="btn btn-primary book-btn" data-param="Gili Islands">Book</button>
                     </div>
                 </div>
             </div>
-
+    
             <!-- Lake Toba -->
             <div class="col">
                 <div class="card h-100">
@@ -162,11 +191,11 @@
                         <p class="card-text">The largest volcanic lake in the world, located in North Sumatra, Indonesia.</p>
                     </div>
                     <div class="card-footer">
-                        <button class="btn btn-primary book-btn">Book</button>
+                        <button class="btn btn-primary book-btn" data-param="Lake Toba">Book</button>
                     </div>
                 </div>
             </div>
-
+    
             <!-- Baliem Valley -->
             <div class="col">
                 <div class="card h-100">
@@ -176,13 +205,14 @@
                         <p class="card-text">Located in Papua, known for its indigenous tribes, stunning landscapes, and traditional culture.</p>
                     </div>
                     <div class="card-footer">
-                        <button class="btn btn-primary book-btn">Book</button>
+                        <button class="btn btn-primary book-btn" data-param="Baliem Valley">Book</button>
                     </div>
                 </div>
             </div>
-
+    
         </div>
     </div>
+    
 
     <!-- Footer -->
     <div class="footer">
@@ -193,5 +223,44 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        const loader = document.getElementById('loader');
+
+        // Add event listener to all buttons with class 'book-btn'
+        document.querySelectorAll('.book-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                // Show the loader
+                loader.style.display = 'flex';
+
+                // Get the data from the clicked button
+                let paramValue = this.getAttribute('data-param');
+                
+                // Send data to Flask
+                fetch('/make_booking', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ param: paramValue })
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.status === 'success') {
+                        alert('Booking details have been sent via email to the registered user!');
+                    } else {
+                        alert('Failed to send email: ' + data.error);
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('An error occurred while sending the email.');
+                })
+                .finally(() => {
+                    // Hide the loader
+                    loader.style.display = 'none';
+                });
+            });
+        });
+    </script>
 </body>
 </html>

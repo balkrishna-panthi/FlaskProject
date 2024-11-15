@@ -7,6 +7,28 @@
     <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <style>
+
+    /* Loader styling */
+    .loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            display: none; /* Hidden initially */
+        }
+
+        .loader .spinner-border {
+            width: 3rem;
+            height: 3rem;
+            color: #007bff;
+        }
+
         /* Ensure all cards have uniform height and size */
         .card {
             height: 100%;
@@ -38,6 +60,15 @@
         {% include 'header.html' %}
     </div>
 
+
+  <!-- Loader Element -->
+  <div class="loader" id="loader">
+    <div class="spinner-border" role="status">
+        <span class="sr-only">Loading...</span>
+    </div>
+</div>
+
+
     <!-- Card Layout -->
     <div class="container my-5">
         <div class="row row-cols-1 row-cols-md-3 g-4">
@@ -50,11 +81,11 @@
                         <p class="card-text">An ancient rock fortress and one of the most iconic landmarks in Sri Lanka, featuring stunning frescoes and panoramic views.</p>
                     </div>
                     <div class="card-footer">
-                        <button class="btn btn-primary book-btn">Book</button>
+                        <button class="btn btn-primary book-btn" data-param="Sigiriya Rock Fortress">Book</button>
                     </div>
                 </div>
             </div>
-
+    
             <!-- Temple of the Tooth -->
             <div class="col">
                 <div class="card h-100">
@@ -64,11 +95,11 @@
                         <p class="card-text">A sacred Buddhist temple in Kandy, home to a relic of the Buddha's tooth, attracting pilgrims and visitors from all over the world.</p>
                     </div>
                     <div class="card-footer">
-                        <button class="btn btn-primary book-btn">Book</button>
+                        <button class="btn btn-primary book-btn" data-param="Temple of the Tooth">Book</button>
                     </div>
                 </div>
             </div>
-
+    
             <!-- Yala National Park -->
             <div class="col">
                 <div class="card h-100">
@@ -78,11 +109,11 @@
                         <p class="card-text">Famous for its wildlife and leopards, Yala is Sri Lanka’s most visited national park, with diverse ecosystems and a rich variety of animals.</p>
                     </div>
                     <div class="card-footer">
-                        <button class="btn btn-primary book-btn">Book</button>
+                        <button class="btn btn-primary book-btn" data-param="Yala National Park">Book</button>
                     </div>
                 </div>
             </div>
-
+    
             <!-- Ella Rock -->
             <div class="col">
                 <div class="card h-100">
@@ -92,11 +123,11 @@
                         <p class="card-text">A beautiful trekking destination offering breathtaking views of the surrounding valleys, tea plantations, and mountains.</p>
                     </div>
                     <div class="card-footer">
-                        <button class="btn btn-primary book-btn">Book</button>
+                        <button class="btn btn-primary book-btn" data-param="Ella Rock">Book</button>
                     </div>
                 </div>
             </div>
-
+    
             <!-- Galle Fort -->
             <div class="col">
                 <div class="card h-100">
@@ -106,11 +137,11 @@
                         <p class="card-text">A UNESCO World Heritage site with a rich history, Galle Fort offers stunning views of the ocean and charming streets lined with colonial architecture.</p>
                     </div>
                     <div class="card-footer">
-                        <button class="btn btn-primary book-btn">Book</button>
+                        <button class="btn btn-primary book-btn" data-param="Galle Fort">Book</button>
                     </div>
                 </div>
             </div>
-
+    
             <!-- Nuwara Eliya -->
             <div class="col">
                 <div class="card h-100">
@@ -120,11 +151,11 @@
                         <p class="card-text">Known as 'Little England,' Nuwara Eliya is a hill station with cool weather, tea plantations, and charming British colonial-era buildings.</p>
                     </div>
                     <div class="card-footer">
-                        <button class="btn btn-primary book-btn">Book</button>
+                        <button class="btn btn-primary book-btn" data-param="Nuwara Eliya">Book</button>
                     </div>
                 </div>
             </div>
-
+    
             <!-- Anuradhapura -->
             <div class="col">
                 <div class="card h-100">
@@ -134,11 +165,11 @@
                         <p class="card-text">A UNESCO World Heritage city, Anuradhapura is home to ancient ruins, stupas, and temples that reflect Sri Lanka’s rich Buddhist history.</p>
                     </div>
                     <div class="card-footer">
-                        <button class="btn btn-primary book-btn">Book</button>
+                        <button class="btn btn-primary book-btn" data-param="Anuradhapura">Book</button>
                     </div>
                 </div>
             </div>
-
+    
             <!-- Mirissa Beach -->
             <div class="col">
                 <div class="card h-100">
@@ -148,11 +179,11 @@
                         <p class="card-text">A stunning beach destination known for its golden sands, crystal-clear waters, and the chance to see whales and dolphins.</p>
                     </div>
                     <div class="card-footer">
-                        <button class="btn btn-primary book-btn">Book</button>
+                        <button class="btn btn-primary book-btn" data-param="Mirissa Beach">Book</button>
                     </div>
                 </div>
             </div>
-
+    
             <!-- Pinnawala Elephant Orphanage -->
             <div class="col">
                 <div class="card h-100">
@@ -162,11 +193,11 @@
                         <p class="card-text">A unique experience to interact with and observe rescued elephants, one of the largest herds in captivity in the world.</p>
                     </div>
                     <div class="card-footer">
-                        <button class="btn btn-primary book-btn">Book</button>
+                        <button class="btn btn-primary book-btn" data-param="Pinnawala Elephant Orphanage">Book</button>
                     </div>
                 </div>
             </div>
-
+    
             <!-- Udawalawe National Park -->
             <div class="col">
                 <div class="card h-100">
@@ -176,13 +207,14 @@
                         <p class="card-text">A wildlife haven where you can spot elephants, leopards, and various other species in a natural, untouched environment.</p>
                     </div>
                     <div class="card-footer">
-                        <button class="btn btn-primary book-btn">Book</button>
+                        <button class="btn btn-primary book-btn" data-param="Udawalawe National Park">Book</button>
                     </div>
                 </div>
             </div>
-
+    
         </div>
     </div>
+    
 
     <!-- Footer -->
     <div class="footer">
@@ -193,5 +225,44 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        const loader = document.getElementById('loader');
+
+        // Add event listener to all buttons with class 'book-btn'
+        document.querySelectorAll('.book-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                // Show the loader
+                loader.style.display = 'flex';
+
+                // Get the data from the clicked button
+                let paramValue = this.getAttribute('data-param');
+                
+                // Send data to Flask
+                fetch('/make_booking', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ param: paramValue })
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.status === 'success') {
+                        alert('Booking details have been sent via email to the registered user!');
+                    } else {
+                        alert('Failed to send email: ' + data.error);
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('An error occurred while sending the email.');
+                })
+                .finally(() => {
+                    // Hide the loader
+                    loader.style.display = 'none';
+                });
+            });
+        });
+    </script>
 </body>
 </html>

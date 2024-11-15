@@ -7,6 +7,26 @@
     <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <style>
+        /* Loader styling */
+        .loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            display: none; /* Hidden initially */
+        }
+
+        .loader .spinner-border {
+            width: 3rem;
+            height: 3rem;
+            color: #007bff;
+        }
         /* Ensure all cards have uniform height and size */
         .card {
             height: 100%;
@@ -38,6 +58,14 @@
         {% include 'header.html' %}
     </div>
 
+
+      <!-- Loader Element -->
+      <div class="loader" id="loader">
+        <div class="spinner-border" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+
     <!-- Card Layout -->
     <div class="container my-5">
         <div class="row row-cols-1 row-cols-md-3 g-4">
@@ -50,11 +78,11 @@
                         <p class="card-text">The iconic twin towers in Kuala Lumpur, offering stunning views of the city skyline.</p>
                     </div>
                     <div class="card-footer">
-                        <button class="btn btn-primary book-btn">Book</button>
+                        <button class="btn btn-primary book-btn" data-param="Petronas Twin Towers">Book</button>
                     </div>
                 </div>
             </div>
-
+    
             <!-- Batu Caves -->
             <div class="col">
                 <div class="card h-100">
@@ -64,11 +92,11 @@
                         <p class="card-text">A limestone hill with a series of caves, home to a Hindu temple and a giant statue of Lord Murugan.</p>
                     </div>
                     <div class="card-footer">
-                        <button class="btn btn-primary book-btn">Book</button>
+                        <button class="btn btn-primary book-btn" data-param="Batu Caves">Book</button>
                     </div>
                 </div>
             </div>
-
+    
             <!-- Langkawi Sky Bridge -->
             <div class="col">
                 <div class="card h-100">
@@ -78,11 +106,11 @@
                         <p class="card-text">A curved cable car bridge offering breathtaking views of the Langkawi islands and rainforest.</p>
                     </div>
                     <div class="card-footer">
-                        <button class="btn btn-primary book-btn">Book</button>
+                        <button class="btn btn-primary book-btn" data-param="Langkawi Sky Bridge">Book</button>
                     </div>
                 </div>
             </div>
-
+    
             <!-- George Town, Penang -->
             <div class="col">
                 <div class="card h-100">
@@ -92,11 +120,11 @@
                         <p class="card-text">A UNESCO World Heritage Site known for its preserved colonial architecture and vibrant street art.</p>
                     </div>
                     <div class="card-footer">
-                        <button class="btn btn-primary book-btn">Book</button>
+                        <button class="btn btn-primary book-btn" data-param="George Town, Penang">Book</button>
                     </div>
                 </div>
             </div>
-
+    
             <!-- Taman Negara National Park -->
             <div class="col">
                 <div class="card h-100">
@@ -106,11 +134,11 @@
                         <p class="card-text">One of the world’s oldest rainforests, known for its diverse wildlife and eco-tourism experiences.</p>
                     </div>
                     <div class="card-footer">
-                        <button class="btn btn-primary book-btn">Book</button>
+                        <button class="btn btn-primary book-btn" data-param="Taman Negara National Park">Book</button>
                     </div>
                 </div>
             </div>
-
+    
             <!-- Mount Kinabalu -->
             <div class="col">
                 <div class="card h-100">
@@ -120,11 +148,11 @@
                         <p class="card-text">The highest mountain in Malaysia, offering challenging hikes and stunning views from the summit.</p>
                     </div>
                     <div class="card-footer">
-                        <button class="btn btn-primary book-btn">Book</button>
+                        <button class="btn btn-primary book-btn" data-param="Mount Kinabalu">Book</button>
                     </div>
                 </div>
             </div>
-
+    
             <!-- Sipadan Island -->
             <div class="col">
                 <div class="card h-100">
@@ -134,11 +162,11 @@
                         <p class="card-text">A renowned diving destination, famous for its rich marine life and crystal-clear waters.</p>
                     </div>
                     <div class="card-footer">
-                        <button class="btn btn-primary book-btn">Book</button>
+                        <button class="btn btn-primary book-btn" data-param="Sipadan Island">Book</button>
                     </div>
                 </div>
             </div>
-
+    
             <!-- Perhentian Islands -->
             <div class="col">
                 <div class="card h-100">
@@ -148,11 +176,11 @@
                         <p class="card-text">A tropical paradise with white sandy beaches, clear waters, and great snorkeling opportunities.</p>
                     </div>
                     <div class="card-footer">
-                        <button class="btn btn-primary book-btn">Book</button>
+                        <button class="btn btn-primary book-btn" data-param="Perhentian Islands">Book</button>
                     </div>
                 </div>
             </div>
-
+    
             <!-- Royal Selangor Pewter Factory -->
             <div class="col">
                 <div class="card h-100">
@@ -162,11 +190,11 @@
                         <p class="card-text">A famous pewter factory in Malaysia, offering tours and insights into the craft of pewter production.</p>
                     </div>
                     <div class="card-footer">
-                        <button class="btn btn-primary book-btn">Book</button>
+                        <button class="btn btn-primary book-btn" data-param="Royal Selangor Pewter Factory">Book</button>
                     </div>
                 </div>
             </div>
-
+    
             <!-- Malacca (Melaka) -->
             <div class="col">
                 <div class="card h-100">
@@ -176,13 +204,13 @@
                         <p class="card-text">A historic city with a blend of Portuguese, Dutch, and British colonial influences, also a UNESCO World Heritage Site.</p>
                     </div>
                     <div class="card-footer">
-                        <button class="btn btn-primary book-btn">Book</button>
+                        <button class="btn btn-primary book-btn" data-param="Malacca (Melaka)">Book</button>
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
+    
 
     <!-- Footer -->
     <div class="footer">
@@ -193,5 +221,44 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        const loader = document.getElementById('loader');
+
+        // Add event listener to all buttons with class 'book-btn'
+        document.querySelectorAll('.book-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                // Show the loader
+                loader.style.display = 'flex';
+
+                // Get the data from the clicked button
+                let paramValue = this.getAttribute('data-param');
+                
+                // Send data to Flask
+                fetch('/make_booking', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ param: paramValue })
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.status === 'success') {
+                        alert('Booking details have been sent via email to the registered user!');
+                    } else {
+                        alert('Failed to send email: ' + data.error);
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('An error occurred while sending the email.');
+                })
+                .finally(() => {
+                    // Hide the loader
+                    loader.style.display = 'none';
+                });
+            });
+        });
+    </script>
 </body>
 </html>
