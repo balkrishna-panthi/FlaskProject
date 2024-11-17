@@ -23,8 +23,12 @@ def before_request():
     email = request.cookies.get('email')  # Get the user's email from the cookie
     if email:
         g.fullname = db.getFullNameFromEmail(email)  # Retrieve the user's fullname using the email
+        g.logText = 'Logout'
+        g.loginroute = 'logout'
     else:
         g.fullname = None  # Set as None or Guest if the user is not logged in
+        g.logText = 'Login'
+        g.loginroute = 'login'
 
 @app.route('/')
 #@app.route('/SignupSceens', methods=['POST'])
@@ -38,6 +42,12 @@ def make_booking():
         place = data.get('param')
         booking_date = datetime.now()
         email = get_cookie()
+        print(f'Email from cookie: {email}')  # Print email to check its value
+       # print('cookie + : ' + email)
+        if  email is None:
+            print('if block hit')
+            return jsonify({'status': 'error', 'error': str('User not found. Please log in.')}), 400
+        
         name = db.getUserNameFromEmail(email)
         db.insertBookingRecords(email, place)
         send_email(place, email, name ,booking_date)
@@ -49,6 +59,8 @@ def make_booking():
 @app.route('/send_email', methods=['POST'])
 def send_email(place, email, name, booking_date):
     try:
+        if not email:
+            raise ValueError('Please sign up/login.')
         msg = Message(
             f'Booking details for {place}',
             sender='Explore Asia',
@@ -169,8 +181,10 @@ def indiabook():
 
 
 @app.route('/Profile')
-def profile():   
-    return render_template('Profile.html')
+def profile():  
+    userDetails = db.getUserDetails(get_cookie()) 
+    print(userDetails)
+    return render_template('Profile.html', userDetails = userDetails)
 
 
 
@@ -236,6 +250,22 @@ def set_cookie():
     
     # Return the response
     return response
+
+
+
+@app.route('/logout')
+def logout():
+    # Create a response object
+    response = make_response(redirect(url_for('firstpage')))
+    print('I am in logout')
+    
+    # Set a cookie with a name 'username' and value 'JohnDoe'
+    response.delete_cookie('email')
+    
+    # Return the response
+    return response
+
+
 
 if __name__ == '__main__':
     app.run(debug=True)

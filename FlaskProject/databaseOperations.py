@@ -1,5 +1,5 @@
 import sqlite3 as sql
-from models import User, Booking
+from models import User, Booking, UserView
 
 def getAllUsers():
     with sql.connect("Database.db") as connection:
@@ -63,5 +63,19 @@ def getFullNameFromEmail(email):
         middlename = row[2]
         lastname = row[3]
         return firstname + ' ' + middlename + ' ' + lastname
+    
+def getUserDetails(email):
+    with sql.connect("Database.db") as connection:
+        cur = connection.cursor()
+        cur.execute('select * from users where email =?',(email,))
+        row = cur.fetchone()
+        userDetails = UserView(id = row[0], first_name = row[1], middle_name = row[2], last_name = row[3], email = row[4])
+          
+        
+        #for d in bookingDetails:
+            #print(f'{d.id}' + ' ' + d.email + ' '+ d.place + ' ' + d.bookingDate + ' ' + d.remarks)
+        
+        return userDetails
+
 
         
