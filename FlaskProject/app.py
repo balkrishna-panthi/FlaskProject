@@ -1,5 +1,5 @@
 from flask import Flask, render_template, redirect, url_for, request, make_response, jsonify, g
-from models import User
+from models import User, UserView
 import databaseOperations as db
 from flask_mail import Mail, Message  #pip install flask-mail
 from datetime import datetime
@@ -12,16 +12,16 @@ app.config['MAIL_SERVER'] = 'smtp.gmail.com'
 app.config['MAIL_PORT'] = 465  # Port 465 for SSL
 app.config['MAIL_USE_SSL'] = True  # Use SSL for port 465
 app.config['MAIL_USE_TLS'] = False  # No TLS for port 465
-app.config['MAIL_USERNAME'] = 'balkrishna.panthi.dev@gmail.com'  # Replace with your email
-app.config['MAIL_PASSWORD'] = 'jmyf degy mtsi ddyv'  # Replace with your email password
-app.config['MAIL_DEFAULT_SENDER'] = 'balkrishna.panthi.dev@gmail.com'  # Replace with your email
+app.config['MAIL_USERNAME'] = '1bikramp@gmail.com'  # Replace with your email
+app.config['MAIL_PASSWORD'] = 'rokz lccq voch muzr'  # Replace with your email password
+app.config['MAIL_DEFAULT_SENDER'] = '1bikramp@gmail.com'  # Replace with your email
 
 mail = Mail(app) 
 
 @app.before_request
 def before_request():
     email = request.cookies.get('email')  # Get the user's email from the cookie
-    if email:
+    if  email is not None:
         g.fullname = db.getFullNameFromEmail(email)  # Retrieve the user's fullname using the email
         g.logText = 'Logout'
         g.loginroute = 'logout'
@@ -182,8 +182,10 @@ def indiabook():
 
 @app.route('/Profile')
 def profile():  
-    userDetails = db.getUserDetails(get_cookie()) 
-    print(userDetails)
+    userDetails = UserView(00, 'Guest', '','','guest@email.com')
+    email = get_cookie()
+    if  email is not None:
+        userDetails = db.getUserDetails(email)     
     return render_template('Profile.html', userDetails = userDetails)
 
 
